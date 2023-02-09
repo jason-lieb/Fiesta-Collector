@@ -1,3 +1,4 @@
+//import and use all app api routes
 const router = require('express').Router();
 const categoryRoutes = require('./categoryRoutes');
 const colorRoutes = require('./colorRoutes');

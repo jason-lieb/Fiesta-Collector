@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
+    "seed": "node seeds/index.js",
     "build-css": "tailwind build -i src/style.css -o public/style/style.css"
   },
   "repository": {

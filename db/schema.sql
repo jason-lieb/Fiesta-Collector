@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS fiesta_db;
+CREATE DATABASE fiesta_db;

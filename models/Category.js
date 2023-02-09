@@ -20,7 +20,7 @@ Category.init({
   timestamps: false,
   freezeTableName: true,
   underscored: true,
-  modelName: 'categories',
+  modelName: 'category',
 })
 
 module.exports = Category;

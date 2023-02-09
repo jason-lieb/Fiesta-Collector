@@ -32,7 +32,7 @@ Item.init({
   timestamps: false,
   freezeTableName: true,
   underscored: true,
-  modelName: 'items',
+  modelName: 'item',
 })
 
 module.exports = Item;

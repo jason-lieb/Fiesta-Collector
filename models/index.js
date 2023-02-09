@@ -1,8 +1,8 @@
-const User = require('./user');
-const Inventory = require('./inventory');
-const Category = require('./category');
-const Item = require('./item');
-const Color = require('./color');
+const User = require('./User');
+const Inventory = require('./Inventory');
+const Category = require('./Category');
+const Item = require('./Item');
+const Color = require('./Color');
 
 // One (Category) to Many (Item) Association
 Item.belongsTo(Category, {

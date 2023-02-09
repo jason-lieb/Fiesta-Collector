@@ -28,7 +28,7 @@ Color.init({
   timestamps: false,
   freezeTableName: true,
   underscored: true,
-  modelName: 'colors',
+  modelName: 'color',
 })
 
 module.exports = Color;

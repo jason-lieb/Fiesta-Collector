@@ -8,8 +8,8 @@ const userRoutes = require('./userRoutes');
 
 router.use('/category', categoryRoutes);
 router.use('/color', colorRoutes);
-router.use('/inventory', inventoryRoutes);
+// router.use('/inventory', inventoryRoutes);
 router.use('/item', itemRoutes);
-router.use('/user', userRoutes);
+// router.use('/user', userRoutes);
 
 module.exports = router;

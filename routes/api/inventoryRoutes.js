@@ -4,7 +4,7 @@ const { Inventory, Item, User, Color } = require('../../models');
 router.get('/', async (req, res) => {
   try {
     const inventoryData = await Inventory.findAll({
-      include: [{ model: Item }, { model: User }, { model: Color }],
+      include: [User, Item, Color],
     });
     res.status(200).json(inventoryData);
   } catch (err) {

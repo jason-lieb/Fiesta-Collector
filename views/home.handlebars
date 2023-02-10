@@ -1,2 +1,5 @@
 {{! style as details page }}
 <h1>From home.handlebars file</h1>
+{{#each serializedData as |data|}}
+<p>{{data.item_name}}</p>
+{{/each}}

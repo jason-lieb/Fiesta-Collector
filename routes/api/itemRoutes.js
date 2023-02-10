@@ -5,7 +5,10 @@ const { Item } = require('../../models');
 router.get('/items', async (req, res) => {
   try {
     const items = await Item.findAll();
-    res.status(200).json(items);
+    const serializedData =items.map((data) => data.get({plain: true}));
+    res.render("home", {serializedData});
+    //res.status(200).json(items);
+    console.log(serializedData);
   } catch (err) {
     res.status(500).json(err);
   }

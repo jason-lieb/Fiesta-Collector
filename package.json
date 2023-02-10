@@ -7,7 +7,9 @@
     "start": "node server.js",
     "dev": "nodemon server.js",
     "seed": "node seeds/index.js",
-    "build-css": "tailwind build -i src/style.css -o public/style/style.css --watch"
+    "build-css": "tailwind build -i src/style.css -o public/style/style.css --watch",
+    "lint": "npx eslint **/*.js",
+    "prettier": "npx prettier --config prettierrc.json --ignore-path .prettierignore --write ."
   },
   "repository": {
     "type": "git",
@@ -29,6 +31,9 @@
     "tailwindcss": "^3.2.6"
   },
   "devDependencies": {
-    "nodemon": "^2.0.20"
+    "eslint": "^8.33.0",
+    "eslint-config-prettier": "^8.6.0",
+    "nodemon": "^2.0.20",
+    "prettier": "2.8.4"
   }
 }

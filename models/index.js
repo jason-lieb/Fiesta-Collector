@@ -6,46 +6,46 @@ const Color = require('./Color');
 
 // One (Category) to Many (Item) Association
 Item.belongsTo(Category, {
-  foreignKey: 'category_id'
-})
+  foreignKey: 'category_id',
+});
 
 Category.hasMany(Item, {
   foreignKey: 'category_id',
-  onDelete: 'CASCADE'
-})
+  onDelete: 'CASCADE',
+});
 
 // Many (User) to Many (Item) Association
 User.belongsToMany(Item, {
   through: {
     model: Inventory,
-    unique: false
+    unique: false,
   },
-  foreignKey: 'user_id'
-})
+  foreignKey: 'user_id',
+});
 
 Item.belongsToMany(User, {
   through: {
     model: Inventory,
-    unique: false
+    unique: false,
   },
-  foreignKey: 'item_id'
-})
+  foreignKey: 'item_id',
+});
 
 // Many (Color) to Many (Item) Association
 Color.belongsToMany(Item, {
   through: {
     model: Inventory,
-    unique: false
+    unique: false,
   },
-  foreignKey: 'color_id'
-})
+  foreignKey: 'color_id',
+});
 
 Item.belongsToMany(Color, {
   through: {
     model: Inventory,
-    unique: false
+    unique: false,
   },
-  foreignKey: 'item_id'
-})
+  foreignKey: 'item_id',
+});
 
 module.exports = { User, Inventory, Category, Item, Color };

@@ -6,7 +6,7 @@ const routes = require('./controllers');
 const app = express();
 const PORT = process.env.PORT || 5500;
 
-//Makes the express app use the route content.
+// Makes the express app use the route content.
 app.use(express.static('public'));
 app.use(routes);
 
@@ -17,4 +17,3 @@ sequelize.sync().then(() => {
         console.log('Running on port '+PORT);
     });
 })
-

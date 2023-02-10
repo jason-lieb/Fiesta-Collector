@@ -513,16 +513,17 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.bg-indigo-300 {
+.bg-red-400 {
   --tw-bg-opacity: 1;
-  background-color: rgb(165 180 252 / var(--tw-bg-opacity));
+  background-color: rgb(248 113 113 / var(--tw-bg-opacity));
 }
 
-.bg-indigo-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(99 102 241 / var(--tw-bg-opacity));
+.text-7xl {
+  font-size: 4.5rem;
+  line-height: 1;
 }
 
-.underline {
-  text-decoration-line: underline;
+.text-8xl {
+  font-size: 6rem;
+  line-height: 1;
 }

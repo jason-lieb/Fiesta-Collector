@@ -10,28 +10,41 @@ Item.belongsTo(Category, {
 })
 
 Category.hasMany(Item, {
-  foreignKey: 'category_id'
+  foreignKey: 'category_id',
+  onDelete: 'CASCADE'
 })
 
 // Many (User) to Many (Item) Association
 User.belongsToMany(Item, {
-  through: Inventory,
+  through: {
+    model: Inventory,
+    unique: false
+  },
   foreignKey: 'user_id'
 })
 
 Item.belongsToMany(User, {
-  through: Inventory,
+  through: {
+    model: Inventory,
+    unique: false
+  },
   foreignKey: 'item_id'
 })
 
 // Many (Color) to Many (Item) Association
 Color.belongsToMany(Item, {
-  through: Inventory,
+  through: {
+    model: Inventory,
+    unique: false
+  },
   foreignKey: 'color_id'
 })
 
 Item.belongsToMany(Color, {
-  through: Inventory,
+  through: {
+    model: Inventory,
+    unique: false
+  },
   foreignKey: 'item_id'
 })
 

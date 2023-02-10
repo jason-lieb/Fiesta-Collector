@@ -12,15 +12,27 @@ Inventory.init({
   },
   user_id: {
     type: DataTypes.INTEGER,
-    allowNull: false
+    allowNull: false,
+    references: {
+      model: 'user',
+      key: 'id'
+    }
   },
   item_id: {
     type: DataTypes.INTEGER,
-    allowNull: false
+    allowNull: false,
+    references: {
+      model: 'item',
+      key: 'id'
+    }
   },
   color_id: {
     type: DataTypes.INTEGER,
-    allowNull: false
+    allowNull: false,
+    references: {
+      model: 'color',
+      key: 'id'
+    }
   },
   quantity: {
     type: DataTypes.INTEGER,

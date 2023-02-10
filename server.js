@@ -21,4 +21,3 @@ sequelize.sync().then(() => {
         console.log('Running on port '+PORT);
     });
 })
-

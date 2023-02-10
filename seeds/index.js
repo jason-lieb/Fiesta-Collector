@@ -13,12 +13,12 @@ const seedDatabase = async () => {
   console.log('\n----- CATEGORIES SEEDED -----\n');
   await seedColor();
   console.log('\n----- COLORS SEEDED -----\n');
-  await seedInventory();
-  console.log('\n----- INVENTORY SEEDED -----\n');
   await seedItem();
   console.log('\n----- ITEMS SEEDED -----\n');
   await seedUser();
   console.log('\n----- USERS SEEDED -----\n');
+  await seedInventory();
+  console.log('\n----- INVENTORY SEEDED -----\n');
 
   process.exit(0);
 };

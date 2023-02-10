@@ -16,16 +16,12 @@ Item.init({
   },
   category_id: {
     type: DataTypes.INTEGER,
-    allowNull: false
+    allowNull: false,
+    references: {
+      model: 'category',
+      key: 'id'
+    }
   },
-  start_year: {
-    type: DataTypes.INTEGER,
-    allowNull: false
-  },
-  end_year: {
-    type: DataTypes.INTEGER,
-    allowNull: false
-  }
 },
 {
   sequelize,

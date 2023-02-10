@@ -9,7 +9,8 @@
     "seed": "node seeds/index.js",
     "build-css": "tailwind build -i src/style.css -o public/style/style.css --watch",
     "lint": "npx eslint **/*.js",
-    "prettier": "npx prettier --config prettierrc.json --ignore-path .prettierignore --write ."
+    "prettier": "npx prettier --config prettierrc.json --ignore-path .prettierignore --write .",
+    "dev-build": "concurrently 'npm:dev' 'npm:build-css'"
   },
   "repository": {
     "type": "git",

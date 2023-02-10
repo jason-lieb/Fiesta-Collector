@@ -1,7 +1,7 @@
 const { Color } = require('../models');
 
 const colorData = [
-  { color_name: 'Red', start_year: 1936, end_year: 1972 },
+  { color_name: 'Red', start_year: 1936, end_year: 1972 }, // Not Available from 1944 to 1958
   { color_name: 'Blue (Cobalt)', start_year: 1936, end_year: 1951 },
   { color_name: 'Green (Light)', start_year: 1936, end_year: 1951 },
   { color_name: 'Yellow', start_year: 1936, end_year: 1969 },

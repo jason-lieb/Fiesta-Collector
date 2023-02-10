@@ -18,14 +18,6 @@ Item.init({
     type: DataTypes.INTEGER,
     allowNull: false
   },
-  start_year: {
-    type: DataTypes.INTEGER,
-    allowNull: false
-  },
-  end_year: {
-    type: DataTypes.INTEGER,
-    allowNull: false
-  }
 },
 {
   sequelize,

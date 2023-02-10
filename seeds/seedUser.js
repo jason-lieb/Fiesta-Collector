@@ -2,9 +2,9 @@ const { User } = require('../models');
 
 const userData = [
   {
-    name: '',
-    email: '',
-    password: ''
+    name: 'Test',
+    email: 'test@email.com',
+    password: '$2b$10$ehuquO78kuIg04Kx7Ghdbe3DmaO7Sp1qbes6LGLzvRmy0pmPV6aE6' // test1234 after hashing
   },
 ];
 

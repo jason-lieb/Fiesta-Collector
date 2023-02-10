@@ -10,7 +10,7 @@ buttonEl.addEventListener('click', async (event) =>{
     let passwordInputEl = document.querySelector('#passwordInput').value.trim();
     // console.log(inputEl);
 
-    const login = await fetch('/login', {
+    const login = await fetch('/signUp', {
         method: 'POST',
         body: JSON.stringify({
             nameFromFrontEnd : nameInputEl,

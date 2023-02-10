@@ -1,11 +1,19 @@
 const router = require('express').Router();
 const { User } = require('../models');
 
+router.get('/signUp', (req, res) => {
+  res.render('signUp');
+});
+
 router.get('/', (req, res) => {
   res.render('login');
 });
 
-router.post('/login', async (req, res) => {
+router.get('/home', (req, res) => {
+  res.render('home');
+});
+
+router.post('/signUp', async (req, res) => {
   try {
     const userInfo = await User.create({
       name: req.body.nameFromFrontEnd,

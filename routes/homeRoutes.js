@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../models');
+const { User, Item } = require('../models');
 
 router.get('/signUp', (req, res) => {
   res.render('signUp');
@@ -9,8 +9,15 @@ router.get('/', (req, res) => {
   res.render('login');
 });
 
-router.get('/home', (req, res) => {
-  res.render('home');
+router.get('/home', async (req, res) => {
+  try {
+    const items = await Item.findAll();
+    const serializedData =items.map((data) => data.get({plain: true}));
+    res.render("home", {serializedData});
+    //res.status(200).json(items);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 router.post('/signUp', async (req, res) => {

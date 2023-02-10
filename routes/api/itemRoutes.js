@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const { Item } = require('../../models');
 
-router.get('/', async (req, res) => {
+//localhost:5500/api/items
+router.get('/items', async (req, res) => {
   try {
     const items = await Item.findAll();
     res.status(200).json(items);

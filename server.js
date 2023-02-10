@@ -12,7 +12,7 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 //Makes the express app use the route content.
 app.use(express.json());
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.use(routes);
 

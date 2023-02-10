@@ -14,38 +14,34 @@ Category.hasMany(Item, {
   onDelete: 'CASCADE',
 });
 
-// Many (User) to Many (Item) Association
-User.belongsToMany(Item, {
-  through: {
-    model: Inventory,
-    unique: false,
-  },
-  foreignKey: 'user_id',
-});
-
-Item.belongsToMany(User, {
-  through: {
-    model: Inventory,
-    unique: false,
-  },
+// One (Item) to Many (Inventory) Association
+Inventory.belongsTo(Item, {
   foreignKey: 'item_id',
 });
 
-// Many (Color) to Many (Item) Association
-Color.belongsToMany(Item, {
-  through: {
-    model: Inventory,
-    unique: false,
-  },
+Item.hasMany(Inventory, {
+  foreignKey: 'item_id',
+  onDelete: 'CASCADE',
+});
+
+// One (Color) to Many (Inventory) Association
+Inventory.belongsTo(Color, {
   foreignKey: 'color_id',
 });
 
-Item.belongsToMany(Color, {
-  through: {
-    model: Inventory,
-    unique: false,
-  },
-  foreignKey: 'item_id',
+Color.hasMany(Inventory, {
+  foreignKey: 'color_id',
+  onDelete: 'CASCADE',
+});
+
+// One (User) to Many (Inventory) Association
+Inventory.belongsTo(User, {
+  foreignKey: 'user_id',
+});
+
+User.hasMany(Inventory, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE',
 });
 
 module.exports = { User, Inventory, Category, Item, Color };

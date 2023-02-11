@@ -4,10 +4,11 @@ exports.get = async (req, res) => {
   try {
     const itemObjects = await Inventory.findAll({
       include: [User, Color, Item],
+      // attributes: { include: ['item.item_name', 'color.color_name'] },
       // where: { user_id: req.session.user_id },
     });
     const dataForItems = itemObjects.map((data) => data.get({ plain: true }));
-    // console.log(dataForItems);
+    console.log(dataForItems);
     const items = dataForItems.map((data) => {
       return {
         user_name: data.user.name,

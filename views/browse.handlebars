@@ -1,3 +1,10 @@
-{{! Nav bar at top }}
 {{! Browse items page }}
+
+{{> nav}}
+{{> filters}}
+
 {{! each loop of itemCards }}
+{{#each serializedData as |data|}}
+  {{!-- {{> itemCard}} --}}
+  <p>{{data.item_name}}</p>
+{{/each}}

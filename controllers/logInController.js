@@ -11,7 +11,6 @@ exports.post = async (req, res) => {
         email: req.body.email,
       },
     });
-    console.log("WAAAAAZAAAAAA", dbUserData);
     if (!dbUserData) {
       res
         .status(400)
@@ -36,7 +35,6 @@ exports.post = async (req, res) => {
         .json({ user: dbUserData, message: 'You are now logged in!' });
     });
   } catch (err) {
-    console.log(err);
     res.status(500).json(err);
   }
 };

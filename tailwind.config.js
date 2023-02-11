@@ -2,7 +2,11 @@
 module.exports = {
   content: ['./views/*', './views/**/*'],
   theme: {
-    extend: {},
+    extend: {
+      // backgroundImage: {
+      //   'boho': "url('./img/orangeboho.png')"
+      // }
+    },
   },
   plugins: [],
 };

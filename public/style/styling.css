@@ -1,3 +1,12 @@
 /* * {
     background-color: rgb(212 212 216);
 } */
+
+hr {
+    color: rgb(82 82 91);
+}
+
+.backimg {
+    background-image: url('../../img/orangeboho.jpg');
+    background-repeat: repeat;
+}

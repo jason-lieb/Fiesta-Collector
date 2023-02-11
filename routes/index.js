@@ -17,7 +17,7 @@ router.get('/signup', signUpController.get);
 router.post('/signup', signUpController.post);
 
 router.get('/login', logInController.get);
-router.post('/logIn', logInController.post);
+router.post('/login', logInController.post);
 
 // Middleware - redirect to login if not logged in
 // router.use(middleware.auth); // Get middleware function working

@@ -2,10 +2,30 @@ const Item = require('../models/Item');
 
 exports.get = async (req, res) => {
   try {
-    const items = await Item.findAll();
-    const serializedData = items.map((data) => data.get({ plain: true }));
-    res.render('home', { serializedData });
+    const itemObjects = await Item.findAll();
+    const items = itemObjects.map((data) => data.get({ plain: true }));
+    // serialized data is id, item_name, category_id
+    res.render('home', { items });
   } catch (err) {
     res.status(500).json(err);
   }
 };
+
+// Session example
+// res.render('homepage', {
+//   galleries,
+//   loggedIn: req.session.loggedIn,
+// });
+
+// Pseudo Code
+// pass in which page we're on (your collection or browse)
+// pass in name of user
+// get items where inventory user id = user from session
+// get categories where id = category id from inventory items where user_id = id from session
+// get colors where id = color id from inventory items where user_id = id from session
+
+// Add later if time allows
+// cookie for how many results per page?
+// page number we're on?
+// get years?
+// get year codes?

@@ -13,9 +13,11 @@ const apiRoutes = require('./api');
 // API, Sign Up, and Log In Routes
 router.use('/api', apiRoutes);
 
+//localhost:5500/api/users/signup
 router.get('/signup', signUpController.get);
 router.post('/signup', signUpController.post);
 
+//localhost:5500/api/users/login
 router.get('/login', logInController.get);
 router.post('/login', logInController.post);
 

@@ -4,8 +4,12 @@ exports.get = async (req, res) => {
   try {
     const itemObjects = await Inventory.findAll({
       include: [User, Color, Item],
-      //where: { user_id: req.session.user_id },
+      where: { user_id: req.session.user_id,
+        item_id: req.session.item_id,
+        color_id: req.session.color_id,
+        item_id: req.session.item_id},
     });
+    console.log('SOMETHING CRAZY',itemObjects)
     const dataForItems = itemObjects.map((data) => data.get({ plain: true }));
     // console.log(dataForItems);
     const items = dataForItems.map((data) => {

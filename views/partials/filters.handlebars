@@ -1,2 +1,55 @@
 {{! Sidebar with filters for categories, colors, year, and year code }}
-<p>filters</p>
+{{!-- <p>filters</p> --}}
+{{!-- <div class="relative inline-block">
+    <button class="p-4">Color</button>
+    <div class="hidden absolute shabow-lg shadow-zinc-800">
+        <p class="p-1 block">Purple</p>
+        <p class="p-1 block"></p>>Teal</p>
+        <p class="p-1 block"></p>>Slate</p>
+    </div>
+</div> --}}
+
+{{!-- <div>
+    <button class="peer px-5 py-2 bg-green-600 hover:bg-green-700 text-white">Category</button>
+    <!-- the menu here -->
+    <div class="hidden peer-hover:flex hover:flex w-[200px] flex-col bg-white drop-shadow-lg">
+        <p class="px-5 py-3 hover:bg-gray-200">Cat 1</p>
+        <p class="px-5 py-3 hover:bg-gray-200">Cat 2</p>
+        <p class="px-5 py-3 hover:bg-gray-200">Cat 3</p>
+    </div>
+</div> --}}
+<aside class="bg-orange-400 sm:w-full sm:h-24 lg:w-80 lg:h-full">
+    <div class="flex flex-wrap justify-evenly pt-1 md:pt-2 lg:grid-col">
+        <div class="mb-3 w-1/5 lg:w-64 lg:h-48">
+            <p class="font-dosis text-lg">Categories</p>
+            <select class="form-select appearance-none block w-full px-3 py-1.5 font-dosis font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300
+            rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select example">
+                <option selected>Select one</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+        </div>
+        {{!-- <hr class="border-2 border-blue-600 mt-5 mb-5"> --}}
+        <div class="mb-3 w-1/5 lg:w-64 lg:h-48">
+            <p class="font-dosis text-lg">Color</p>
+            <select class="form-select appearance-none block w-full px-3 py-1.5 font-dosis font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300
+            rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-zinc-600 focus:outline-none" aria-label="Default select example">
+                <option selected>Select one</option>
+                <option value="1">Purple</option>
+                <option value="2">Teal</option>
+                <option value="3">Slate</option>
+            </select>
+        </div>
+        <div class="mb-3 w-1/5 lg:w-64 lg:h-48">
+            <p class="font-dosis text-lg">Year</p>
+            <select class="form-select appearance-none block w-full px-3 py-1.5 font-dosis font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300
+            rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select example">
+                <option selected>Select one</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+        </div>
+    </div>
+</aside>

@@ -1,24 +1,37 @@
-const { Inventory, User, Color, Item } = require('../models');
+const { Inventory, User, Color, Item, Category } = require('../models');
 
 exports.get = async (req, res) => {
   try {
-    const itemObjects = await Inventory.findAll({
-      include: [User, Color, Item],
-      // attributes: { include: ['item.item_name', 'color.color_name'] },
+    const inventoryObjects = await Inventory.findAll({
+      include: [
+        { model: User, attributes: ['name'] },
+        { model: Color, attributes: ['color_name'] },
+        {
+          model: Item,
+          attributes: ['item_name'],
+          include: [{ model: Category, attributes: ['category_name'] }],
+        },
+      ],
       // where: { user_id: req.session.user_id },
     });
-    const dataForItems = itemObjects.map((data) => data.get({ plain: true }));
-    console.log(dataForItems);
-    const items = dataForItems.map((data) => {
+    const dataForInventory = inventoryObjects.map((data) =>
+      data.get({ plain: true })
+    );
+    const nameOfUser =
+      dataForInventory.length > 1
+        ? dataForInventory[0].user.name
+        : dataForInventory.user.name;
+    const inventory = dataForInventory.map((data) => {
       return {
-        user_name: data.user.name,
+        page: 'home',
+        // user_name: data.user.name,
         item_name: data.item.item_name,
         color_name: data.color.color_name,
+        category_name: data.item.category.category_name,
         quantity: data.quantity,
       };
     });
-    // console.log(items);
-    res.render('home', { items });
+    res.render('home', { inventory, name: nameOfUser });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -31,8 +44,6 @@ exports.get = async (req, res) => {
 // });
 
 // Pseudo Code
-// pass in which page we're on (your collection or browse)
-// pass in name of user
 // get items where inventory user id = user from session
 // get categories where id = category id from inventory items where user_id = id from session
 // get colors where id = color id from inventory items where user_id = id from session

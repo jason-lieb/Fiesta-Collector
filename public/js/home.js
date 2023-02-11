@@ -1,4 +1,3 @@
-console.log("IM TIRED OF DOING THIS")
 const logout = async () => {
     const response = await fetch('/api/user/logout', {
         method: 'POST',

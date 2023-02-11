@@ -13,8 +13,8 @@ const apiRoutes = require('./api');
 // API, Sign Up, and Log In Routes
 router.use('/api', apiRoutes);
 
-router.get('/signUp', signUpController.get);
-router.post('/signUp', signUpController.post);
+router.get('/signup', signUpController.get);
+router.post('/signup', signUpController.post);
 
 router.get('/login', logInController.get);
 router.post('/logIn', logInController.post);

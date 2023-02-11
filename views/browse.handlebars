@@ -3,8 +3,7 @@
 {{> nav}}
 {{> filters}}
 
-{{! each loop of itemCards }}
-{{#each serializedData as |data|}}
-  {{!-- {{> itemCard}} --}}
-  <p>{{data.item_name}}</p>
+<h1>From home.handlebars file</h1>
+{{#each items as |item|}}
+  {{> itemCard}}
 {{/each}}

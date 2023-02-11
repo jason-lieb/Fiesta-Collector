@@ -1,4 +1,4 @@
-const {User} = require('../models');
+const { User } = require('../models');
 
 exports.get = (req, res) => {
   res.render('logIn');
@@ -12,19 +12,19 @@ exports.post = async (req, res) => {
       },
     });
 
-    if(!dbUserData){
+    if (!dbUserData) {
       res
         .status(400)
-        .json({message: 'Incorrect email or password. Please try again!'});
-        return;
+        .json({ message: 'Incorrect email or password. Please try again!' });
+      return;
     }
 
     const validPassword = await dbUserData.checkPassword(req.body.password);
 
-    if(!validPassword) {
+    if (!validPassword) {
       res
-      .status(400)
-      .json({ message: 'Incorrect email or password. Please try again!'});
+        .status(400)
+        .json({ message: 'Incorrect email or password. Please try again!' });
       return;
     }
 
@@ -32,9 +32,8 @@ exports.post = async (req, res) => {
       req.session.loggedIn = true;
       res
         .status(200)
-        .json({user: dbUserData, message: 'You are now logged in!'});
+        .json({ user: dbUserData, message: 'You are now logged in!' });
     });
-
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

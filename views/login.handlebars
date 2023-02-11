@@ -11,27 +11,27 @@
 </button> --}}
 <main class=''>
 {{!-- <main class='bg-repeat bg-center h-full w-full' style="background-image: url('../img/orangeboho.jpg')"> --}}
-    <div class='h-full flex items-center flex-col'>
-        <div class='max-w-lg max-h-lg'>
+    <div class='h-full flex items-center flex-col md:justify-center'>
+        <div class='card'>
             <div class='my-8'>
-                <h1 class='font-serif text-4xl md:text-6xl lg:text-8xl text-center pt-5'>Fiesta Collector</h1>
+                <h1 class='font-serif text-4xl md:text-5xl lg:text-6xl text-center pt-5'>Fiesta Collector</h1>
             </div>
             <ol>
                 <li class='flex flex-col'>
-                    <input id='emailInput' placeholder='example@email.com' class='hover:bg-zinc-300 rounded-lg border-solid border-2 border-zinc-600 text-center w-full my-2 py-1'>
+                    <input id='emailInput' placeholder='example@email.com' class='hover:bg-zinc-300 rounded-lg border-solid border-2 border-zinc-500 text-center w-full my-2 py-1 font-dosis lg:text-lg'>
                     </input>
-                    <input id='passwordInput' placeholder='Password' class='hover:bg-zinc-300 rounded-lg border-solid border-2 border-zinc-600 text-center w-full my-2 py-1'>
+                    <input id='passwordInput' placeholder='Password' class='hover:bg-zinc-300 rounded-lg border-solid border-2 border-zinc-500 text-center w-full my-2 py-1 font-dosis lg:text-lg'>
                     </input>
                 </li>
                 <li class='flex justify-center'>
-                    <button id='button' class='bg-orange-400 hover:bg-zinc-300 w-full rounded-lg mt-4 mb-4 py-2'>
+                    <button id='button' class='bg-orange-400 hover:bg-zinc-300 w-full rounded-lg mt-4 mb-4 py-2 font-dosis'>
                             Login
                     </button>
                 </li>
-                <hr class='mt-5 border-2'>
+                <hr class='mt-5 mb-5 border-2'>
                 <li class='text-center m-3'>
-                    <h4 class='text-lg'>Don't have an account?</h4>
-                    <a href='./signUp.handlebars' class='text-orange-400'>Creat account</a>
+                    <h4 class='text-xl font-dosis'>Don't have an account?</h4>
+                    <a href='./signUp' class='text-orange-400 hover:text-zinc-400 font-dosis text-lg'>Create account</a>
                 </li>
             </ol>
         </div>

@@ -6,6 +6,9 @@ module.exports = {
       // backgroundImage: {
       //   'boho': "url('./img/orangeboho.png')"
       // }
+      fontFamily: {
+        'dosis': ['Dosis', 'serif']
+      }
     },
   },
   plugins: [],

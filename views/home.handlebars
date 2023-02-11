@@ -5,7 +5,6 @@
 
 {{! each loop of itemCards }}
 <h1>From home.handlebars file</h1>
-{{#each serializedData as |data|}}
-  {{!-- {{> itemCard}} --}}
-  <p>{{data.item_name}}</p>
+{{#each items as |item|}}
+  {{> itemCard}}
 {{/each}}

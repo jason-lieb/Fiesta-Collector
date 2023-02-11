@@ -1,10 +1,22 @@
-const Item = require('../models/Item');
+const { Inventory, User, Color, Item } = require('../models');
 
 exports.get = async (req, res) => {
   try {
-    const itemObjects = await Item.findAll();
-    const items = itemObjects.map((data) => data.get({ plain: true }));
-    // serialized data is id, item_name, category_id
+    const itemObjects = await Inventory.findAll({
+      include: [User, Color, Item],
+      // where: { user_id: req.session.user_id },
+    });
+    const dataForItems = itemObjects.map((data) => data.get({ plain: true }));
+    // console.log(dataForItems);
+    const items = dataForItems.map((data) => {
+      return {
+        user_name: data.user.name,
+        item_name: data.item.item_name,
+        color_name: data.color.color_name,
+        quantity: data.quantity,
+      };
+    });
+    // console.log(items);
     res.render('home', { items });
   } catch (err) {
     res.status(500).json(err);

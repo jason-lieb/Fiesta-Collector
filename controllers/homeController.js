@@ -12,7 +12,7 @@ exports.get = async (req, res) => {
           include: [{ model: Category, attributes: ['category_name'] }],
         },
       ],
-      // where: { user_id: req.session.user_id },
+      where: { user_id: req.session.user_id },
     });
     const dataForInventory = inventoryObjects.map((data) =>
       data.get({ plain: true })

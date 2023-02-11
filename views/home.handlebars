@@ -1,5 +1,10 @@
-{{! style as details page }}
+{{! Nav bar at top }}
+
+{{!-- filters --}}
+\{{! style as details page }}
 <h1>From home.handlebars file</h1>
 {{#each serializedData as |data|}}
-<p>{{data.item_name}}</p>
+  <p>{{data.item_name}}</p>
 {{/each}}
+
+{{! each loop of itemCards }}

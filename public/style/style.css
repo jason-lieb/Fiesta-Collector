@@ -948,6 +948,11 @@ video {
   outline-offset: 2px;
 }
 
+.active\:text-orange-400:active {
+  --tw-text-opacity: 1;
+  color: rgb(251 146 60 / var(--tw-text-opacity));
+}
+
 .peer:hover ~ .peer-hover\:flex {
   display: flex;
 }

@@ -595,6 +595,30 @@ video {
   margin-top: 138px;
 }
 
+.mt-20 {
+  margin-top: 5rem;
+}
+
+.mt-16 {
+  margin-top: 4rem;
+}
+
+.mt-\[70px\] {
+  margin-top: 70px;
+}
+
+.mt-\[75px\] {
+  margin-top: 75px;
+}
+
+.mt-\[px\] {
+  margin-top: px;
+}
+
+.mt-\[80px\] {
+  margin-top: 80px;
+}
+
 .block {
   display: block;
 }

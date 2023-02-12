@@ -1,4 +1,6 @@
 let buttonEl = document.querySelector('#button');
+const toggle = document.querySelector('#toggle');
+const password = document.querySelector('#passwordInput');
 
 buttonEl.addEventListener('click', async (event) =>{
     event.preventDefault();
@@ -15,4 +17,11 @@ buttonEl.addEventListener('click', async (event) =>{
         }),
         headers: {"Content-Type": "application/json"},
     });
+})
+
+// on click toggles password visiblity
+toggle.addEventListener('click', () => {
+    const eyeType = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', eyeType);
+    toggle.classList.toggle('fa-eye');
 })

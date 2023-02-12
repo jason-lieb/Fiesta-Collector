@@ -513,10 +513,6 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.fixed {
-  position: fixed;
-}
-
 .absolute {
   position: absolute;
 }
@@ -529,20 +525,8 @@ video {
   position: sticky;
 }
 
-.left-0 {
-  left: 0px;
-}
-
-.right-0 {
-  right: 0px;
-}
-
 .top-0 {
   top: 0px;
-}
-
-.bottom-0 {
-  bottom: 0px;
 }
 
 .m-0 {
@@ -603,12 +587,12 @@ video {
   display: none;
 }
 
-.h-full {
-  height: 100%;
-}
-
 .h-8 {
   height: 2rem;
+}
+
+.h-full {
+  height: 100%;
 }
 
 .w-1\/5 {
@@ -963,32 +947,12 @@ video {
     margin-bottom: 0.75rem;
   }
 
-  .lg\:h-8 {
-    height: 2rem;
-  }
-
-  .lg\:h-full {
-    height: 100%;
-  }
-
-  .lg\:h-3 {
-    height: 0.75rem;
-  }
-
-  .lg\:h-72 {
-    height: 18rem;
-  }
-
-  .lg\:h-80 {
-    height: 20rem;
-  }
-
   .lg\:h-96 {
     height: 24rem;
   }
 
-  .lg\:h-screen {
-    height: 100vh;
+  .lg\:h-full {
+    height: 100%;
   }
 
   .lg\:w-64 {
@@ -997,10 +961,6 @@ video {
 
   .lg\:w-80 {
     width: 20rem;
-  }
-
-  .lg\:justify-around {
-    justify-content: space-around;
   }
 
   .lg\:space-y-64 > :not([hidden]) ~ :not([hidden]) {

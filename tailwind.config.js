@@ -4,8 +4,9 @@ module.exports = {
   theme: {
     extend: {
       // backgroundImage: {
-      //   'boho': "url('./img/orangeboho.png')"
-      // }
+      //   'boho': "url('./img/orangeboho.jpg')",
+      //   'sun': "url('./img/sun.jpg')"
+      // },
       fontFamily: {
         dosis: ['Dosis', 'serif'],
       },

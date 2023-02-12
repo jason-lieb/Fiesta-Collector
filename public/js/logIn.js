@@ -1,3 +1,6 @@
+const toggle = document.querySelector('#toggle');
+const password = document.querySelector('#passwordInput');
+
 
 const loginFormHandler = async (event) => {
   event.preventDefault();
@@ -21,3 +24,11 @@ const loginFormHandler = async (event) => {
 document
   .querySelector('#button')
   .addEventListener('click', loginFormHandler);
+
+  
+  // on click toggles password visiblity
+toggle.addEventListener('click', () => {
+    const eyeType = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', eyeType);
+    toggle.classList.toggle('fa-eye');
+})

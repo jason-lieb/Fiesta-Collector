@@ -20,6 +20,7 @@
 </div> --}}
 <aside class=" sm:w-full sm:h-24 lg:w-80 lg:h-full">
     <div style="height: 20rem; overflow: scroll; border: red 1px solid;">
+      <h3 style="font-weight: bolder;">Available to Select</h3>
       <div id="categoryFilters">
         {{#each categories as |category|}}
           <p>{{category}}</p>
@@ -30,6 +31,9 @@
           <p>{{color}}</p>
         {{/each}}
       </div>
+      <h3 style="font-weight: bolder;">Selected</h3>
+      <div id="selectedCategoryFilters"></div>
+      <div id="selectedColorFilters"></div>
     </div>
 
 

@@ -6,8 +6,10 @@
   {{> filters}}
   <main>
     <h2>{{name}}'s Fiesta Collection</h2>
-    {{#each inventory as |item|}}
-      {{> itemCard}}
-    {{/each}}
+    <div class="container flex flex-wrap">
+      {{#each inventory as |item|}}
+        {{> itemCard}}
+      {{/each}}
+    </div>
   </main>
 </div>

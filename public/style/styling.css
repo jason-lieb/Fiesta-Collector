@@ -10,9 +10,15 @@
 /* .orange {
     background-color: rgb(23, 23, 223);
 } */
- body {
+
+/* body {
     overflow: hidden;
- }
+    height: 100vh;
+}
+
+.scroll {
+    overflow-y: auto;
+} */
  
 .line {
     border-right: 2px solid rgb(161 161 170);

@@ -7,8 +7,8 @@ module.exports = {
       //   'boho': "url('./img/orangeboho.png')"
       // }
       fontFamily: {
-        'dosis': ['Dosis', 'serif']
-      }
+        dosis: ['Dosis', 'serif'],
+      },
     },
   },
   plugins: [],

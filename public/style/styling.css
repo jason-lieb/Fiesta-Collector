@@ -2,10 +2,6 @@
     background-color: rgb(212 212 216);
 } */
 
-hr {
-    color: rgb(82 82 91);
-}
-
 /* .backimg {
     background-image: url('../../img/orangeboho.jpg');
     background-repeat: repeat;
@@ -14,3 +10,17 @@ hr {
 /* .orange {
     background-color: rgb(23, 23, 223);
 } */
+
+/* body {
+    overflow: hidden;
+    height: 100vh;
+}
+
+.scroll {
+    overflow-y: auto;
+} */
+ 
+.line {
+    border-right: 2px solid rgb(161 161 170);
+    height: 100%;
+}

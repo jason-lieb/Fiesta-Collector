@@ -1,11 +1,13 @@
 {{! Collection page }}
 
 {{> nav}}
-{{> filters}}
 
-{{! each loop of itemCards }}
-{{!-- <h1>From home.handlebars file</h1> --}}
-<h2>{{name}}'s Fiesta Collection</h2>
-{{#each inventory as |item|}}
-  {{> itemCard}}
-{{/each}}
+<div class="grid grid-cols-[1fr_5fr]"> {{! Change this grid columns later }}
+  {{> filters}}
+  <main>
+    <h2>{{name}}'s Fiesta Collection</h2>
+    {{#each inventory as |item|}}
+      {{> itemCard}}
+    {{/each}}
+  </main>
+</div>

@@ -20,12 +20,16 @@
 </div> --}}
 <aside class=" sm:w-full sm:h-24 lg:w-80 lg:h-full">
     <div style="height: 20rem; overflow: scroll; border: red 1px solid;">
-      {{#each categories as |category|}}
-        <p>{{category}}</p>
-      {{/each}}
-      {{#each colors as |color|}}
-        <p>{{color}}</p>
-      {{/each}}
+      <div id="categoryFilters">
+        {{#each categories as |category|}}
+          <p>{{category}}</p>
+        {{/each}}
+      </div>
+      <div id="colorFilters">
+        {{#each colors as |color|}}
+          <p>{{color}}</p>
+        {{/each}}
+      </div>
     </div>
 
 

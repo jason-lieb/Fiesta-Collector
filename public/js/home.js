@@ -18,6 +18,7 @@ const logout = async () => {
   }
 };
 
+///////////////// Is this function necessary?
 const init = () => {
   const categories = [];
   const categoriesDiv = document.getElementById('categoryFilters').children;

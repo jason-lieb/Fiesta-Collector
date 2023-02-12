@@ -10,24 +10,26 @@ const middleware = require('../utils/authMiddleware');
 
 const apiRoutes = require('./api');
 
-// API, Sign Up, and Log In Routes
+//localhost:5500/api
 router.use('/api', apiRoutes);
 
-//localhost:5500/api/users/signup
+//localhost:5500/signup
 router.get('/signup', signUpController.get);
 router.post('/signup', signUpController.post);
 
-//localhost:5500/api/users/login
+//localhost:5500/login
+router.use('/login', logInController.redirect);
 router.get('/login', logInController.get);
 router.post('/login', logInController.post);
 
 // Middleware - redirect to login if not logged in
 router.use(middleware.auth);
 
-// Browse and Home Routes
+//localhost:5500/browse
 router.get('/browse', browseController.get);
 router.get('/browse/:id', browseController.getOne);
 
+//localhost:5500/
 router.get('/', homeController.get);
 
 module.exports = router;

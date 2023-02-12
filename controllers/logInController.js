@@ -38,3 +38,16 @@ exports.post = async (req, res) => {
     res.status(500).json(err);
   }
 };
+
+exports.redirect = (req, res, next) => {
+  // If the user is logged in, redirect them to the home route
+  if (req.session.loggedIn) {
+    if (req.method === 'GET') {
+      res.redirect('/');
+    } else if (req.method === 'POST') {
+      res.status(400).json({ message: 'User already logged in' });
+    }
+  } else {
+    next();
+  }
+};

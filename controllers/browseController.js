@@ -1,10 +1,19 @@
-const { Item } = require('../models');
+const { Item, Category, Color } = require('../models');
 
 exports.get = async (req, res) => {
   try {
+    // Query all items
     const itemObjects = await Item.findAll();
     const items = itemObjects.map((data) => data.get({ plain: true }));
-    res.render('browse', { items });
+    // Query all categories
+    const categoryObjects = await Category.findAll();
+    const categories = categoryObjects.map(
+      (data) => data.dataValues.category_name
+    );
+    // Query all colors
+    const colorObjects = await Color.findAll();
+    const colors = colorObjects.map((data) => data.dataValues.color_name);
+    res.render('browse', { items, categories, colors });
   } catch (err) {
     res.status(500).json(err);
   }

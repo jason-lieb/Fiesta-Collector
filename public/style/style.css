@@ -583,6 +583,10 @@ video {
   display: flex;
 }
 
+.grid {
+  display: grid;
+}
+
 .hidden {
   display: none;
 }
@@ -611,6 +615,10 @@ video {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+}
+
+.grid-cols-\[1fr_5fr\] {
+  grid-template-columns: 1fr 5fr;
 }
 
 .flex-col {

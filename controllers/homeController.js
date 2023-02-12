@@ -2,6 +2,7 @@ const { Inventory, User, Color, Item, Category } = require('../models');
 
 exports.get = async (req, res) => {
   try {
+    // Query all of inventory for user
     const inventoryObjects = await Inventory.findAll({
       include: [
         { model: User, attributes: ['name'] },
@@ -17,6 +18,7 @@ exports.get = async (req, res) => {
     const dataForInventory = inventoryObjects.map((data) =>
       data.get({ plain: true })
     );
+    // Grab name of user to pass to handlebars
     const nameOfUser =
       dataForInventory.length > 1
         ? dataForInventory[0].user.name
@@ -31,7 +33,16 @@ exports.get = async (req, res) => {
         quantity: data.quantity,
       };
     });
-    res.render('home', { inventory, name: nameOfUser });
+    // Create list of distinct categories for user's collections
+    const categories = new Set();
+    dataForInventory.forEach((data) =>
+      categories.add(data.item.category.category_name)
+    );
+    // Create list of distinct colors for user's collections
+    const colors = new Set();
+    dataForInventory.forEach((data) => colors.add(data.color.color_name));
+    // Pass all info to handlebars
+    res.render('home', { inventory, categories, colors, name: nameOfUser });
   } catch (err) {
     res.status(500).json(err);
   }

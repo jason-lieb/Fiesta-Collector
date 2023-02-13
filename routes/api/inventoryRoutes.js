@@ -26,4 +26,16 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+router.putOne('/:id', async (req, res) => {
+  try{
+    const inventoryData = await Product.update(req.body, {
+      where: {
+        id: req.params.id,
+      },
+    })
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
+
 module.exports = router;

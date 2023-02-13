@@ -575,8 +575,8 @@ video {
   margin-left: 0.625rem;
 }
 
-.ml-\[400px\] {
-  margin-left: 400px;
+.ml-\[236px\] {
+  margin-left: 236px;
 }
 
 .mt-4 {
@@ -591,72 +591,20 @@ video {
   margin-top: 128px;
 }
 
+.mt-\[300px\] {
+  margin-top: 300px;
+}
+
 .mt-\[73px\] {
   margin-top: 73px;
 }
 
-.ml-\[500px\] {
-  margin-left: 500px;
+.mt-\[px\] {
+  margin-top: px;
 }
 
-.ml-\[4px\] {
-  margin-left: 4px;
-}
-
-.ml-\[47px\] {
-  margin-left: 47px;
-}
-
-.ml-\[475px\] {
-  margin-left: 475px;
-}
-
-.ml-\[470px\] {
-  margin-left: 470px;
-}
-
-.ml-\[460px\] {
-  margin-left: 460px;
-}
-
-.ml-\[450px\] {
-  margin-left: 450px;
-}
-
-.ml-\[\] {
-  margin-left: ;
-}
-
-.ml-\[2\] {
-  margin-left: 2;
-}
-
-.ml-\[24\] {
-  margin-left: 24;
-}
-
-.ml-\[245\] {
-  margin-left: 245;
-}
-
-.ml-\[245px\] {
-  margin-left: 245px;
-}
-
-.ml-\[24px\] {
-  margin-left: 24px;
-}
-
-.ml-\[240px\] {
-  margin-left: 240px;
-}
-
-.ml-\[23px\] {
-  margin-left: 23px;
-}
-
-.ml-\[236px\] {
-  margin-left: 236px;
+.mt-\[500px\] {
+  margin-top: 500px;
 }
 
 .block {
@@ -711,10 +659,6 @@ video {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-}
-
-.grid-flow-col {
-  grid-auto-flow: column;
 }
 
 .grid-cols-\[1fr_5fr\] {
@@ -1041,44 +985,12 @@ video {
 }
 
 @media (min-width: 768px) {
-  .md\:ml-\[400px\] {
-    margin-left: 400px;
-  }
-
   .md\:ml-\[320px\] {
     margin-left: 320px;
   }
 
   .md\:w-\[351px\] {
     width: 351px;
-  }
-
-  .md\:w-\[\] {
-    width: ;
-  }
-
-  .md\:w-\[320\] {
-    width: 320;
-  }
-
-  .md\:w-\[320px\] {
-    width: 320px;
-  }
-
-  .md\:w-\[360px\] {
-    width: 360px;
-  }
-
-  .md\:w-60 {
-    width: 15rem;
-  }
-
-  .md\:w-96 {
-    width: 24rem;
-  }
-
-  .md\:w-\[400px\] {
-    width: 400px;
   }
 
   .md\:grid-rows-1 {
@@ -1107,17 +1019,15 @@ video {
     font-size: 3rem;
     line-height: 1;
   }
-
-  @media (min-width: 1024px) {
-    .md\:lg\:ml-\[450px\] {
-      margin-left: 450px;
-    }
-  }
 }
 
 @media (min-width: 1024px) {
   .lg\:mb-3 {
     margin-bottom: 0.75rem;
+  }
+
+  .lg\:ml-\[450px\] {
+    margin-left: 450px;
   }
 
   .lg\:mt-\[139px\] {
@@ -1126,10 +1036,6 @@ video {
 
   .lg\:mt-\[80px\] {
     margin-top: 80px;
-  }
-
-  .lg\:ml-\[450px\] {
-    margin-left: 450px;
   }
 
   .lg\:h-96 {

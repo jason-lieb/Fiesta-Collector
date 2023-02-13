@@ -625,6 +625,10 @@ video {
   margin-left: 236px;
 }
 
+.ml-\[240px\] {
+  margin-left: 240px;
+}
+
 .ml-\[245px\] {
   margin-left: 245px;
 }
@@ -653,8 +657,16 @@ video {
   margin-top: 73px;
 }
 
-.ml-\[240px\] {
-  margin-left: 240px;
+.ml-10 {
+  margin-left: 2.5rem;
+}
+
+.ml-6 {
+  margin-left: 1.5rem;
+}
+
+.ml-5 {
+  margin-left: 1.25rem;
 }
 
 .block {
@@ -1153,6 +1165,14 @@ video {
 
   .lg\:w-\[483px\] {
     width: 483px;
+  }
+
+  .lg\:w-60 {
+    width: 15rem;
+  }
+
+  .lg\:w-48 {
+    width: 12rem;
   }
 
   .lg\:space-y-64 > :not([hidden]) ~ :not([hidden]) {

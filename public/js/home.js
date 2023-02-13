@@ -288,7 +288,7 @@ const removeCard = async (e) => {
   }
 }
 const saveChoice = (e) => {
-
+  
 }
 
 init();

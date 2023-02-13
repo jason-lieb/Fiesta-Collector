@@ -1,7 +1,7 @@
 const { Category } = require('../models');
 
 const categoryData = [
-  { category_name: 'Anniversay Items' },
+  { category_name: 'Anniversary Items' },
   { category_name: 'Bakeware' },
   { category_name: 'Bowls' },
   { category_name: 'Canisters and Crocks' },

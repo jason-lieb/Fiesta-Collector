@@ -15,43 +15,52 @@ exports.get = async (req, res) => {
       ],
       where: { user_id: req.session.user_id },
     });
-    const dataForInventory = inventoryObjects.map((data) =>
-      data.get({ plain: true })
-    );
-    // Grab name of user to pass to handlebars
-    const nameOfUser =
-      dataForInventory.length > 1
-        ? dataForInventory[0].user.name
-        : dataForInventory.user.name;
-    const inventory = dataForInventory.map((data) => {
-      return {
-        page: 'home',
-        item_name: data.item.item_name,
-        color_name: data.color.color_name,
-        category_name: data.item.category.category_name,
-        quantity: data.quantity,
-      };
-    });
-    // Create list of distinct categories for user's collections
-    const categories = new Set();
-    dataForInventory.forEach((data) =>
-      categories.add(data.item.category.category_name)
-    );
-    // Create list of distinct colors for user's collections
-    const colors = new Set();
-    dataForInventory.forEach((data) => colors.add(data.color.color_name));
-    // Create list of distinct colors for user's collections
-    const items = new Set();
-    dataForInventory.forEach((data) => items.add(data.item.item_name));
-    // Pass all info to handlebars
-    res.render('home', {
-      inventory,
-      categories,
-      colors,
-      items,
-      name: nameOfUser,
-      home: 'true',
-    });
+    if (inventoryObjects.length > 0) {
+      const dataForInventory = inventoryObjects.map((data) =>
+        data.get({ plain: true })
+      );
+      // Grab name of user to pass to handlebars
+      const nameOfUser =
+        dataForInventory.length > 1
+          ? dataForInventory[0].user.name
+          : dataForInventory.user.name;
+      const inventory = dataForInventory.map((data) => {
+        return {
+          page: 'home',
+          item_name: data.item.item_name,
+          color_name: data.color.color_name,
+          category_name: data.item.category.category_name,
+          quantity: data.quantity,
+        };
+      });
+      // Create list of distinct categories for user's collections
+      const categories = new Set();
+      dataForInventory.forEach((data) =>
+        categories.add(data.item.category.category_name)
+      );
+      // Create list of distinct colors for user's collections
+      const colors = new Set();
+      dataForInventory.forEach((data) => colors.add(data.color.color_name));
+      // Create list of distinct colors for user's collections
+      const items = new Set();
+      dataForInventory.forEach((data) => items.add(data.item.item_name));
+      // Pass all info to handlebars
+      res.render('home', {
+        inventory,
+        categories,
+        colors,
+        items,
+        name: nameOfUser,
+        home: true,
+      });
+    } else {
+      const userNameObject = await User.findByPk(req.session.user_id);
+      const nameOfUser = userNameObject.dataValues.name;
+      res.render('home', {
+        name: nameOfUser,
+        home: true,
+      });
+    }
   } catch (err) {
     res.status(500).json(err);
   }

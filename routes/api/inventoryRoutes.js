@@ -26,7 +26,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 //localhost:5500/api/inventory/:id
-router.putOne('/:id', async (req, res) => {
+router.put('/:id', async (req, res) => {
   try{
     const inventoryData = await Inventory.update(req.body, {
       where: {
@@ -43,7 +43,7 @@ router.putOne('/:id', async (req, res) => {
   }
 });
 //localhost:5500/api/inventory/:id
-router.deleteOne('/:id', async (req, res) => {
+router.delete('/:id', async (req, res) => {
   try{
     const inventoryData = await Inventory.destroy({
       where: {

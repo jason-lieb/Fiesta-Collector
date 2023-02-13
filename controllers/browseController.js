@@ -45,6 +45,16 @@ exports.getOne = async (req, res) => {
   }
 };
 
+exports.postOne = async (req, res) => {
+  try{
+    const inventoryData = await Inventory.create(req.body);
+    console.log(inventoryData);
+    res.status(200).json(inventoryData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+}
+
 // Session example
 // res.render('homepage', {
 //   galleries,

@@ -1,3 +1,6 @@
+const hidden = document.querySelector('#hidden')
+const x = document.querySelector('#x')
+
 const logout = async () => {
     const response = await fetch('/api/user/logout', {
         method: 'POST',
@@ -7,8 +10,13 @@ const logout = async () => {
     if (response.ok) {
         document.location.replace('/login');
     } else {
-        alert ('Failed to log out');
+        hidden.classList.remove('hidden');
+        // alert ('Failed to log out');
     }
 };
 
 document.querySelector('#logOutButton').addEventListener('click', logout);
+
+x.addEventListener('click', () => {
+    hidden.setAttribute('class', 'hidden');
+})

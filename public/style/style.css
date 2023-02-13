@@ -529,6 +529,10 @@ video {
   top: 0px;
 }
 
+.row-span-1 {
+  grid-row: span 1 / span 1;
+}
+
 .m-0 {
   margin: 0px;
 }
@@ -571,6 +575,10 @@ video {
   margin-left: 0.625rem;
 }
 
+.ml-\[236px\] {
+  margin-left: 236px;
+}
+
 .mt-4 {
   margin-top: 1rem;
 }
@@ -579,20 +587,24 @@ video {
   margin-top: 1.25rem;
 }
 
-.mt-\[129px\] {
-  margin-top: 129px;
+.mt-\[128px\] {
+  margin-top: 128px;
+}
+
+.mt-\[300px\] {
+  margin-top: 300px;
 }
 
 .mt-\[73px\] {
   margin-top: 73px;
 }
 
-.mt-\[127px\] {
-  margin-top: 127px;
+.mt-\[px\] {
+  margin-top: px;
 }
 
-.mt-\[128px\] {
-  margin-top: 128px;
+.mt-\[500px\] {
+  margin-top: 500px;
 }
 
 .block {
@@ -615,6 +627,10 @@ video {
   display: none;
 }
 
+.h-10 {
+  height: 2.5rem;
+}
+
 .h-8 {
   height: 2rem;
 }
@@ -629,6 +645,10 @@ video {
 
 .w-\[200px\] {
   width: 200px;
+}
+
+.w-\[263px\] {
+  width: 263px;
 }
 
 .w-full {
@@ -693,6 +713,10 @@ video {
   border-width: 2px;
 }
 
+.border-4 {
+  border-width: 4px;
+}
+
 .border-solid {
   border-style: solid;
 }
@@ -700,6 +724,11 @@ video {
 .border-gray-300 {
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
+}
+
+.border-orange-400 {
+  --tw-border-opacity: 1;
+  border-color: rgb(251 146 60 / var(--tw-border-opacity));
 }
 
 .border-zinc-500 {
@@ -845,6 +874,11 @@ video {
   color: rgb(113 113 122 / var(--tw-text-opacity));
 }
 
+.text-zinc-600 {
+  --tw-text-opacity: 1;
+  color: rgb(82 82 91 / var(--tw-text-opacity));
+}
+
 .shadow-zinc-800 {
   --tw-shadow-color: #27272a;
   --tw-shadow: var(--tw-shadow-colored);
@@ -951,6 +985,14 @@ video {
 }
 
 @media (min-width: 768px) {
+  .md\:ml-\[320px\] {
+    margin-left: 320px;
+  }
+
+  .md\:w-\[351px\] {
+    width: 351px;
+  }
+
   .md\:grid-rows-1 {
     grid-template-rows: repeat(1, minmax(0, 1fr));
   }
@@ -984,20 +1026,16 @@ video {
     margin-bottom: 0.75rem;
   }
 
-  .lg\:mt-\[138px\] {
-    margin-top: 138px;
-  }
-
-  .lg\:mt-\[80px\] {
-    margin-top: 80px;
-  }
-
-  .lg\:mt-\[137px\] {
-    margin-top: 137px;
+  .lg\:ml-\[450px\] {
+    margin-left: 450px;
   }
 
   .lg\:mt-\[139px\] {
     margin-top: 139px;
+  }
+
+  .lg\:mt-\[80px\] {
+    margin-top: 80px;
   }
 
   .lg\:h-96 {
@@ -1014,6 +1052,10 @@ video {
 
   .lg\:w-80 {
     width: 20rem;
+  }
+
+  .lg\:w-\[483px\] {
+    width: 483px;
   }
 
   .lg\:space-y-64 > :not([hidden]) ~ :not([hidden]) {

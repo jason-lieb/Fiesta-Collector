@@ -254,26 +254,26 @@ const loadEdit = (e) => {
   const itemCardText = e.target.parentElement;
   itemCardText.removeChild(itemCardText.children[3]);
   const deletebtn = document.createElement('i');
-  deletebtn.className = 'deleteBtn fa-solid fa-xmark absolute text-2xl text-zinc-600 ml-3 mt-3 hover:text-red-600';
+  deletebtn.className =
+    'deleteBtn fa-solid fa-xmark absolute text-2xl text-zinc-600 ml-3 mt-3 hover:text-red-600';
   const left = document.createElement('i');
-  left.className = 'leftBtn fa-solid fa-chevron-left absolute ml-[13px] mt-[65px] text-zinc-600 hover:text-orange-400';
+  left.className =
+    'leftBtn fa-solid fa-chevron-left absolute ml-[13px] mt-[65px] text-zinc-600 hover:text-orange-400';
   const right = document.createElement('i');
-  right.className = 'rightBtn fa-solid fa-chevron-right absolute ml-[245px] mt-[65px] text-zinc-600 hover:text-orange-400';
+  right.className =
+    'rightBtn fa-solid fa-chevron-right absolute ml-[245px] mt-[65px] text-zinc-600 hover:text-orange-400';
   const savebtn = document.createElement('i');
-  savebtn.className = 'saveBtn fa-solid fa-floppy-disk absolute ml-[240px] mt-3 text-2xl text-zinc-600 hover:text-orange-400';
+  savebtn.className =
+    'saveBtn fa-solid fa-floppy-disk absolute ml-[240px] mt-3 text-2xl text-zinc-600 hover:text-orange-400';
   itemCardText.appendChild(left);
   itemCardText.appendChild(right);
   const card = itemCardText.parentElement;
   card.prepend(deletebtn);
   card.prepend(savebtn);
-}
+};
 
-const quantityUp = (e) => {
-
-}
-const quantityDown = (e) => {
-
-}
+const quantityUp = (e) => {};
+const quantityDown = (e) => {};
 const removeCard = async (e) => {
   const card = e.target.parentElement;
   const id = card.dataset.id;
@@ -283,13 +283,32 @@ const removeCard = async (e) => {
       headers: { 'Content-Type': 'application/json' },
     });
     card.remove();
-  } catch(err) {
+  } catch (err) {
     console.error(err);
   }
-}
-const saveChoice = (e) => {
-
-}
+};
+const saveChoice = async (e) => {
+  // e.target is currently <i class="save ...">
+  // create a variable for id with the same way as you did in removeCard
+  // also create variables for item_name, qty, and color the same way as you did id
+  // remove delete, save, left, and right buttons the same way you did for the edit btn
+  // create a new edit button and add it to the dom the same way you did for the edit btn
+  // try {
+  //   const response = await fetch(`/api/inventory/${id}`, {
+  //     method: 'PUT',
+  //     headers: { 'Content-Type': 'application/json' },
+  //     body: {
+  //       id,
+  //       user_id,
+  //       item_id,
+  //       color_id,
+  //       quantity,
+  //     },
+  //   });
+  // } catch (err) {
+  //   console.error(err);
+  // }
+};
 
 init();
 document.querySelector('#logOutButton').addEventListener('click', logout);
@@ -297,19 +316,15 @@ x.addEventListener('click', () => {
   hidden.setAttribute('class', 'hidden');
 });
 itemCardEl.addEventListener('click', (e) => {
-  if (e.target.className.split(' ')[0] == 'edit') {
-    loadEdit(e);
-  }
-
   switch (e.target.className.split(' ')[0]) {
     case 'edit':
       loadEdit(e);
       break;
     case 'leftBtn':
-      quantityUp(e);
+      quantityDown(e);
       break;
     case 'rightBtn':
-      quantityDown(e);
+      quantityUp(e);
       break;
     case 'deleteBtn':
       removeCard(e);
@@ -318,7 +333,4 @@ itemCardEl.addEventListener('click', (e) => {
       saveChoice(e);
       break;
   }
-  
-
 });
-

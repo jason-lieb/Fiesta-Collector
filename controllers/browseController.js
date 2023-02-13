@@ -19,7 +19,12 @@ exports.get = async (req, res) => {
     // Query all colors
     const colorObjects = await Color.findAll();
     const colors = colorObjects.map((data) => data.dataValues.color_name);
-    res.render('browse', { items, categories, colors, browse: true });
+    res.render('browse', {
+      items,
+      categories,
+      colors,
+      browse: true,
+    });
   } catch (err) {
     res.status(500).json(err);
   }

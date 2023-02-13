@@ -9,9 +9,6 @@ const global = {
 
 const hidden = document.querySelector('#hidden');
 const x = document.querySelector('#x');
-// const deletebtn = document.querySelector('#deleteCard');
-// const left = document.querySelector('#left');
-// const right = document.querySelector('#right');
 const itemCardEl = document.querySelector('#itemCards');
 
 const logout = async () => {
@@ -277,9 +274,18 @@ const quantityUp = (e) => {
 const quantityDown = (e) => {
 
 }
-const removeCard = (e) => {
+const removeCard = async (e) => {
   const card = e.target.parentElement;
-  card.remove();
+  const id = card.dataset.id;
+  try {
+    const response = await fetch(`/api/inventory/${id}`, {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+    });
+    card.remove();
+  } catch(err) {
+    console.error(err);
+  }
 }
 const saveChoice = (e) => {
 

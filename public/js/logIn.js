@@ -5,7 +5,10 @@ const x = document.querySelector('#x');
 
 const loginFormHandler = async (event) => {
   event.preventDefault();
-  const email = document.querySelector('#emailInput').value.trim();
+  const email = document
+    .querySelector('#emailInput')
+    .value.trim()
+    .toLowerCase();
   const password = document.querySelector('#passwordInput').value.trim();
 
   if (email && password) {

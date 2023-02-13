@@ -65,9 +65,9 @@ const itemData = [
   { item_name: 'Salad Plate', category_id: 9 },
   { item_name: 'Chop Plate', category_id: 9 },
   { item_name: 'Holiday Plate', category_id: 9 },
-  { item_name: 'Pedestal Cake Plate', category_id: 10 },
-  { item_name: '2pc Chip-N-Dip Set', category_id: 10 },
-  { item_name: 'Small Bread Tray', category_id: 10 },
+  { item_name: 'Pedestal Cake Plate', category_id: 11 },
+  { item_name: '2pc Chip-N-Dip Set', category_id: 11 },
+  { item_name: 'Small Bread Tray', category_id: 11 },
 ];
 
 const seedItem = () => Item.bulkCreate(itemData);

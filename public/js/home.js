@@ -48,13 +48,13 @@ const selectFilter = (e, filterType) => {
     case 'color':
       global.selectedColorIndex[selectedFilter] = index;
       global.selectedColors.add(selectedFilter);
-      firstFilterOfType = global.selectedCategories.size > 1 ? false : true;
+      firstFilterOfType = global.selectedColors.size > 1 ? false : true;
       selectedFiltersDOM = document.getElementById('selectedColorFilters');
       break;
     case 'item':
       global.selectedItemIndex[selectedFilter] = index;
       global.selectedItems.add(selectedFilter);
-      firstFilterOfType = global.selectedCategories.size > 1 ? false : true;
+      firstFilterOfType = global.selectedItems.size > 1 ? false : true;
       selectedFiltersDOM = document.getElementById('selectedItemFilters');
       break;
   }
@@ -64,7 +64,9 @@ const selectFilter = (e, filterType) => {
   selectedFiltersDOM.appendChild(newSelected);
   // Hides selected category from unselected categories
   e.target.style.display = 'none';
-  //// send request to api with selected filters to receive the items that fit the filters
+
+  //// send request to api with selected filters to receive the items that fit the filters?
+
   if (firstFilterOfType) {
     hide(selectedFilter, filterType, true);
   } else {
@@ -105,7 +107,9 @@ const deselectFilter = (e, filterType) => {
   filtersDOM.children[unhideIndex].style.display = 'block';
   // Remove DOM element from selected colors
   e.target.remove();
-  //// send request to api with selected filters to receive the items that fit the filters
+
+  //// send request to api with selected filters to receive the items that fit the filters?
+
   if (lastFilterOfType) {
     unhide(deselectedFilter, filterType, false);
   } else {

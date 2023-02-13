@@ -1,36 +1,51 @@
- {{!-- Card with picture and item name, color, quantity and delete buttons 
-<div style="border: 1px black solid; width: 10rem; height: 10rem; margin: 1rem;" data-color="{{color_name}}" data-category="{{category_name}}" data-item="{{item_name}}">
-   Delete button if on home page
-   Edit button if on home page 
-  Item.pictureLocation? 
+{{! Card with picture and item name, color, quantity and delete buttons }}
+{{!-- <div style="border: 1px black solid; width: 10rem; height: 20rem; margin: 1rem;" data-color="{{color_name}}" data-category="{{category_name}}" data-item="{{item_name}}"> --}}
+  {{!-- Delete button if on home page --}}
+  {{!-- Edit button if on home page --}}
+  {{!-- Item.pictureLocation? --}}
+  {{!-- {{#if item_has_pic}}
+    <img src="/img/items/{{item_id}}.webp" alt="" style="width: 200px; height: 200px;">
+  {{else}}
+    <img src="/img/items/image_not_available.png" alt="" style="width: 200px; height: 200px;">
+  {{/if}}
   <p>{{item_name}}</p>
   <p>{{color_name}}</p>
   <p>{{quantity}}</p>
-</div> --}}
+</div>  --}}
 
 {{!-- option one --}}
-<div id='card' class='container border-2 border-zinc-600 w-64 rounded' data-color="{{color_name}}" data-category="{{category_name}}" data-item="{{item_name}}">
+{{!-- <div id='card' class='container border-2 border-zinc-600 w-64 rounded' data-color="{{color_name}}" data-category="{{category_name}}" data-item="{{item_name}}">
   <img src='/img/sun.jpg' alt='dish' class='img'> 
+  {{#if item_has_pic}}
+    <img src="/img/items/{{item_id}}.webp" alt="dish" class='img w-[270px] h-[270px]'>
+  {{else}}
+    <img src="/img/items/image_not_available.png" alt="" style="width: 200px; height: 200px;">
+  {{/if}}
   <div class='text-center grid grid-rows-3 '>
       <p class='font-dosis text-xl '>{{item_name}}</p>
       <p class='font-dosis text-xl '>{{color_name}}</p>
       <p class='font-dosis text-xl'>Quantity: {{quantity}}</p>
       <i class='fa-solid fa-pen-to-square absolute ml-[245px] mt-[65px] hover:text-orange-400'></i>
   </div>
-</div>
+</div> --}}
 
 {{!-- option two --}}
-{{!-- <div id='card' class='container border-2 border-zinc-600 w-64 rounded' data-color="{{color_name}}" data-category="{{category_name}}" data-item="{{item_name}}">
+<div id='card' class='container border-2 border-zinc-600 w-64 rounded' data-color="{{color_name}}" data-category="{{category_name}}" data-item="{{item_name}}">
   <i class='fa-solid fa-xmark absolute text-2xl text-zinc-600 ml-3 mt-3 hover:text-red-600'></i>
-  <img src='/img/orangeboho.jpg' alt='dish' class='img'> 
-  <div class='text-center grid grid-rows-3 '>
+  {{!-- <img src='/img/orangeboho.jpg' alt='dish' class='img'>  --}}
+  {{#if item_has_pic}}
+    <img src="/img/items/{{item_id}}.webp" alt="dish" class='img w-[270px] h-[270px]'>
+  {{else}}
+    <img src="/img/items/image_not_available.png" alt="" style="width: 200px; height: 200px;">
+  {{/if}}
+  <div class='text-center grid grid-rows-3 bg-zinc-600 text-white'>
       <p class='font-dosis text-xl '>{{item_name}}</p>
       <p class='font-dosis text-xl '>{{color_name}}</p>
       <p class='font-dosis text-xl'>Quantity: {{quantity}}</p>
-      <i class='fa-solid fa-chevron-left absolute ml-[13px] mt-[65px] text-zinc-600 hover:text-orange-400'></i>
-      <i class='fa-solid fa-chevron-right absolute ml-[245px] mt-[65px] text-zinc-600 hover:text-orange-400'></i>
+      <i class='fa-solid fa-chevron-left absolute ml-[13px] mt-[65px] text-white hover:text-orange-400'></i>
+      <i class='fa-solid fa-chevron-right absolute ml-[245px] mt-[65px] text-white hover:text-orange-400'></i>
   </div>
-</div> --}}
+</div>
 
 {{!-- option three --}}
 {{!-- <div id='card' class='container border-2 border-zinc-600 w-64 rounded' data-color="{{color_name}}" data-category="{{category_name}}" data-item="{{item_name}}">

@@ -8,13 +8,25 @@
   <p>{{quantity}}</p>
 </div> --}}
 
-<div id='card' class='container border-2 border-zinc-600 w-64' data-color="{{color_name}}" data-category="{{category_name}}" data-item="{{item_name}}">
-  <img src='/img/sun.jpg' alt='dish'>
+{{!-- option one --}}
+{{!-- <div id='card' class='container border-2 border-zinc-600 w-64 rounded' data-color="{{color_name}}" data-category="{{category_name}}" data-item="{{item_name}}">
+  <img src='/img/sun.jpg' alt='dish' class='img'> 
   <div class='text-center grid grid-rows-3 '>
       <p class='font-dosis text-xl '>{{item_name}}</p>
       <p class='font-dosis text-xl '>{{color_name}}</p>
       <p class='font-dosis text-xl'>Quantity: {{quantity}}</p>
-      <i class='fa-solid fa-pen-to-square absolute ml-56 mt-16'></i>
+      <i class='fa-solid fa-pen-to-square absolute ml-[245px] mt-[65px] hover:text-orange-400'></i>
+  </div>
+</div> --}}
+{{!-- option two --}}
+<div id='card' class='container border-2 border-zinc-600 w-64 rounded' data-color="{{color_name}}" data-category="{{category_name}}" data-item="{{item_name}}">
+  <img src='/img/sun.jpg' alt='dish' class='img'> 
+  <div class='text-center grid grid-rows-3 '>
+      <p class='font-dosis text-xl '>{{item_name}}</p>
+      <p class='font-dosis text-xl '>{{color_name}}</p>
+      <p class='font-dosis text-xl'>Quantity: {{quantity}}</p>
+      <i class='fa-solid fa-chevron-right absolute ml-[245px] mt-[65px] hover:text-orange-400'></i>
+      {{!-- <i class='fa-solid fa-pen-to-square absolute ml-[245px] mt-[65px] hover:text-orange-400'></i> --}}
   </div>
 </div>
 {{!-- <div id='card' class='container border-2 border-zinc-600 w-64'>

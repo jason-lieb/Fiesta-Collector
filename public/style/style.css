@@ -653,6 +653,14 @@ video {
   margin-top: 73px;
 }
 
+.ml-\[240px\] {
+  margin-left: 240px;
+}
+
+.ml-\[240\=px\] {
+  margin-left: 240=px;
+}
+
 .block {
   display: block;
 }

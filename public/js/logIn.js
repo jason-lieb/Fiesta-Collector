@@ -1,6 +1,7 @@
 const toggle = document.querySelector('#toggle');
 const password = document.querySelector('#passwordInput');
-
+const hidden = document.querySelector('#hidden');
+const x = document.querySelector('#x');
 
 const loginFormHandler = async (event) => {
   event.preventDefault();
@@ -16,7 +17,7 @@ const loginFormHandler = async (event) => {
       if(response.ok) {
           document.location.replace('/');
       } else {
-          alert('Failed to log in.');
+        hidden.removeAttribute('class', 'hidden');
       }
   }
 }
@@ -31,4 +32,9 @@ toggle.addEventListener('click', () => {
     const eyeType = password.getAttribute('type') === 'password' ? 'text' : 'password';
     password.setAttribute('type', eyeType);
     toggle.classList.toggle('fa-eye');
+})
+
+// removes popup on click
+x.addEventListener('click', () => {
+    hidden.setAttribute('class', 'hidden');
 })

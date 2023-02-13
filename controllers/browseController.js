@@ -11,13 +11,11 @@ exports.get = async (req, res) => {
         category_name: data.category.category_name,
       };
     });
-    console.log(items);
     // Query all categories
     const categoryObjects = await Category.findAll();
     const categories = categoryObjects.map(
       (data) => data.dataValues.category_name
     );
-    console.log(categories);
     // Query all colors
     const colorObjects = await Color.findAll();
     const colors = colorObjects.map((data) => data.dataValues.color_name);

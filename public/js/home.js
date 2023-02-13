@@ -9,6 +9,7 @@ const global = {
 
 const hidden = document.querySelector('#hidden');
 const x = document.querySelector('#x');
+const itemCardEl = document.querySelector('#itemCards');
 
 const logout = async () => {
   const response = await fetch('/api/user/logout', {
@@ -249,8 +250,75 @@ const init = () => {
   }
 };
 
+const loadEdit = (e) => {
+  const itemCardText = e.target.parentElement;
+  itemCardText.removeChild(itemCardText.children[3]);
+  const deletebtn = document.createElement('i');
+  deletebtn.className = 'deleteBtn fa-solid fa-xmark absolute text-2xl text-zinc-600 ml-3 mt-3 hover:text-red-600';
+  const left = document.createElement('i');
+  left.className = 'leftBtn fa-solid fa-chevron-left absolute ml-[13px] mt-[65px] text-zinc-600 hover:text-orange-400';
+  const right = document.createElement('i');
+  right.className = 'rightBtn fa-solid fa-chevron-right absolute ml-[245px] mt-[65px] text-zinc-600 hover:text-orange-400';
+  const savebtn = document.createElement('i');
+  savebtn.className = 'saveBtn fa-solid fa-floppy-disk absolute ml-[240px] mt-3 text-2xl text-zinc-600 hover:text-orange-400';
+  itemCardText.appendChild(left);
+  itemCardText.appendChild(right);
+  const card = itemCardText.parentElement;
+  card.prepend(deletebtn);
+  card.prepend(savebtn);
+}
+
+const quantityUp = (e) => {
+
+}
+const quantityDown = (e) => {
+
+}
+const removeCard = async (e) => {
+  const card = e.target.parentElement;
+  const id = card.dataset.id;
+  try {
+    const response = await fetch(`/api/inventory/${id}`, {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+    });
+    card.remove();
+  } catch(err) {
+    console.error(err);
+  }
+}
+const saveChoice = (e) => {
+
+}
+
 init();
 document.querySelector('#logOutButton').addEventListener('click', logout);
 x.addEventListener('click', () => {
   hidden.setAttribute('class', 'hidden');
 });
+itemCardEl.addEventListener('click', (e) => {
+  if (e.target.className.split(' ')[0] == 'edit') {
+    loadEdit(e);
+  }
+
+  switch (e.target.className.split(' ')[0]) {
+    case 'edit':
+      loadEdit(e);
+      break;
+    case 'leftBtn':
+      quantityUp(e);
+      break;
+    case 'rightBtn':
+      quantityDown(e);
+      break;
+    case 'deleteBtn':
+      removeCard(e);
+      break;
+    case 'saveBtn':
+      saveChoice(e);
+      break;
+  }
+  
+
+});
+

@@ -1,9 +1,27 @@
 {{! Card with picture and item name, color, quantity and delete buttons }}
-<div style='border: 1px black solid;' data-color='{{color_name}}' data-category='{{category_name}}'>
+{{!-- <div style='border: 1px black solid;' data-color='{{color_name}}' data-category='{{category_name}}'>
   {{! Delete button if on home page }}
   {{! Edit button if on home page }}
   {{! Item.pictureLocation? }}
+  
   <p>{{item_name}}</p>
   <p>{{color_name}}</p>
   <p>{{quantity}}</p>
+</div> --}}
+
+<div id='card' class='container border-2 border-zinc-600 w-64'>
+  <img src='../public/img/sun.jpg' alt='dish'>
+  <div class='text-center grid grid-rows-3 grid-cols-5'>
+      <p class='font-dosis text-xl col-span-5'>{{item_name}}</p>
+      <p class='font-dosis text-xl col-span-5'>{{color_name}}</p>
+      <p class='font-dosis text-xl col-start-1 col-end-4'>Quantity: {{quantity}}</p>
+      <i class='fa-solid fa-pen-to-square col-start-4 col-end-5'></i>
+  </div>
+</div>
+<div id='card' class='container border-2 border-zinc-600 w-64'>
+  <img src='../public/img/sun.jpg' alt='dish'>
+  <div class='text-center'>
+      <p class='font-dosis text-xl'>{{item_name}}</p>
+      <p class='font-dosis text-xl'>{{color_name}}</p>
+  </div>
 </div>

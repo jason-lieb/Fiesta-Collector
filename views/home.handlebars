@@ -2,12 +2,14 @@
 
 {{> nav}}
 
-<div class="grid grid-cols-[1fr_5fr]"> {{! Change this grid columns later }}
+<div class='grid grid-cols-[1fr_5fr]'> {{! Change this grid columns later }}
   {{> filters}}
-  <main>
-    <h2>{{name}}'s Fiesta Collection</h2>
-    {{#each inventory as |item|}}
-      {{> itemCard}}
-    {{/each}}
+  <main class=''>
+    <h2 class='font-dosis text-xl m-2'>{{name}}'s Fiesta Collection</h2>
+    <div class="flex flex-wrap gap-4 m-2">
+      {{#each inventory as |item|}}
+        {{> itemCard}}
+      {{/each}}
+    </div>
   </main>
 </div>

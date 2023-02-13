@@ -625,6 +625,10 @@ video {
   margin-left: 236px;
 }
 
+.ml-\[240px\] {
+  margin-left: 240px;
+}
+
 .ml-\[245px\] {
   margin-left: 245px;
 }
@@ -651,10 +655,6 @@ video {
 
 .mt-\[73px\] {
   margin-top: 73px;
-}
-
-.ml-\[240px\] {
-  margin-left: 240px;
 }
 
 .block {

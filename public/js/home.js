@@ -270,10 +270,22 @@ const loadEdit = (e) => {
   const card = itemCardText.parentElement;
   card.prepend(deletebtn);
   card.prepend(savebtn);
-};
 
-const quantityUp = (e) => {};
-const quantityDown = (e) => {};
+}
+
+const quantityUp = (e) => {
+  const quantityEl = e.target.parentElement.children[2];
+  quantityEl.innerText = `quantity: ${card.dataset.qty++}`;
+}
+
+const quantityDown = (e) => {
+  const quantityEl = e.target.parentElement.children[2];
+  quantityEl.innerText = `quantity: ${card.dataset.qty--}`;
+}
+
+
+
+
 const removeCard = async (e) => {
   const card = e.target.parentElement;
   const id = card.dataset.id;
@@ -316,6 +328,7 @@ x.addEventListener('click', () => {
   hidden.setAttribute('class', 'hidden');
 });
 itemCardEl.addEventListener('click', (e) => {
+
   switch (e.target.className.split(' ')[0]) {
     case 'edit':
       loadEdit(e);

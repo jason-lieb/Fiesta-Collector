@@ -9,6 +9,10 @@ const global = {
 
 const hidden = document.querySelector('#hidden');
 const x = document.querySelector('#x');
+const deletebtn = document.querySelector('#deleteCard');
+const left = document.querySelector('#left');
+const right = document.querySelector('#right');
+const itemCardEl = document.querySelector('#itemCards');
 
 const logout = async () => {
   const response = await fetch('/api/user/logout', {
@@ -253,4 +257,15 @@ init();
 document.querySelector('#logOutButton').addEventListener('click', logout);
 x.addEventListener('click', () => {
   hidden.setAttribute('class', 'hidden');
+});
+itemCardEl.addEventListener('click', (e) => {
+  console.log(e.target.parentElement.parentElement);
+});
+
+left.addEventListener('click', () => {
+
+});
+
+right.addEventListener('click', () => {
+  
 });

@@ -4,7 +4,7 @@
 <div class="grid grid-cols-[1fr_5fr]"> {{! Change this grid columns later }}
   {{> filters}}
   <main class="scroll">
-    <div class="container flex flex-wrap">
+    <div id="itemCards" class="container flex flex-wrap">
       {{#each items as |item|}}
         {{> itemCard}}
       {{/each}}

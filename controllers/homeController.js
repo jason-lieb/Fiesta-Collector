@@ -26,7 +26,6 @@ exports.get = async (req, res) => {
     const inventory = dataForInventory.map((data) => {
       return {
         page: 'home',
-        // user_name: data.user.name,
         item_name: data.item.item_name,
         color_name: data.color.color_name,
         category_name: data.item.category.category_name,
@@ -41,8 +40,18 @@ exports.get = async (req, res) => {
     // Create list of distinct colors for user's collections
     const colors = new Set();
     dataForInventory.forEach((data) => colors.add(data.color.color_name));
+    // Create list of distinct colors for user's collections
+    const items = new Set();
+    dataForInventory.forEach((data) => items.add(data.item.item_name));
     // Pass all info to handlebars
-    res.render('home', { inventory, categories, colors, name: nameOfUser });
+    res.render('home', {
+      inventory,
+      categories,
+      colors,
+      items,
+      name: nameOfUser,
+      home: 'true',
+    });
   } catch (err) {
     res.status(500).json(err);
   }

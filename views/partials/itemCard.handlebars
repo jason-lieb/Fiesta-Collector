@@ -14,7 +14,7 @@
 </div>  --}}
 
 {{!-- option one --}}
-<div id='card' class='container border-2 border-zinc-600 w-64 rounded' data-color="{{color_name}}" data-category="{{category_name}}" data-item="{{item_name}}" data-id="{{id}}">
+<div id='card' class='container border-2 border-zinc-600 w-64 rounded' data-qty="{{quantity}}" data-color="{{color_name}}" data-category="{{category_name}}" data-item="{{item_name}}" data-id="{{id}}">
   {{!-- <img src='/img/sun.jpg' alt='dish' class='img'>  --}}
   {{#if item_has_pic}}
     <img src="/img/items/{{item_id}}.webp" alt="dish" class='img w-[270px] h-[270px]'>
@@ -32,7 +32,7 @@
 {{!-- option two --}}
 {{!-- <div id='card' class='container border-2 border-zinc-600 w-64 rounded' data-color="{{color_name}}" data-category="{{category_name}}" data-item="{{item_name}}">
   <i id='deleteCard' class='fa-solid fa-xmark absolute text-2xl text-zinc-600 ml-3 mt-3 hover:text-red-600'></i>
-  <img src='/img/orangeboho.jpg' alt='dish' class='img'> 
+  <img src='/img/orangeboho.jpg' alt='dish' class='img'>
   {{#if item_has_pic}}
     <img src="/img/items/{{item_id}}.webp" alt="dish" class='img w-[270px] h-[270px]'>
   {{else}}
@@ -50,7 +50,7 @@
 {{!-- option three --}}
 {{!-- <div id='card' class='container border-2 border-zinc-600 w-64 rounded' data-color="{{color_name}}" data-category="{{category_name}}" data-item="{{item_name}}">
   <i class='fa-solid fa-xmark absolute text-2xl text-zinc-600 ml-3 mt-3 hover:text-red-600'></i>
-  <img src='/img/sun.jpg' alt='dish' class='img'> 
+  <img src='/img/sun.jpg' alt='dish' class='img'>
   <div class='text-center grid grid-rows-3 '>
       <p class='font-dosis text-xl '>{{item_name}}</p>
       <p class='font-dosis text-xl '>{{color_name}}</p>

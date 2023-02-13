@@ -30,6 +30,7 @@ exports.get = async (req, res) => {
       const inventory = dataForInventory.map((data) => {
         return {
           page: 'home',
+          id: data.id,
           item_name: data.item.item_name,
           item_id: data.item.id,
           item_has_pic: !imagesNotAvailable.includes(data.item.id),

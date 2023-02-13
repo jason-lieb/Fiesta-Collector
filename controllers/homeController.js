@@ -9,7 +9,7 @@ exports.get = async (req, res) => {
         { model: Color, attributes: ['color_name'] },
         {
           model: Item,
-          attributes: ['item_name'],
+          attributes: ['id', 'item_name'],
           include: [{ model: Category, attributes: ['category_name'] }],
         },
       ],
@@ -24,10 +24,15 @@ exports.get = async (req, res) => {
         dataForInventory.length > 1
           ? dataForInventory[0].user.name
           : dataForInventory.user.name;
+      const imagesNotAvailable = [
+        1, 2, 21, 23, 24, 27, 28, 30, 31, 32, 46, 51, 52, 53, 64,
+      ];
       const inventory = dataForInventory.map((data) => {
         return {
           page: 'home',
           item_name: data.item.item_name,
+          item_id: data.item.id,
+          item_has_pic: !imagesNotAvailable.includes(data.item.id),
           color_name: data.color.color_name,
           category_name: data.item.category.category_name,
           quantity: data.quantity,

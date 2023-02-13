@@ -5,9 +5,14 @@ exports.get = async (req, res) => {
     // Query all items
     const itemObjects = await Item.findAll({ include: [{ model: Category }] });
     const dataForItems = itemObjects.map((data) => data.get({ plain: true }));
+    const imagesNotAvailable = [
+      1, 2, 21, 23, 24, 27, 28, 30, 31, 32, 46, 51, 52, 53, 64,
+    ];
     const items = dataForItems.map((data) => {
       return {
+        item_id: data.id,
         item_name: data.item_name,
+        item_has_pic: !imagesNotAvailable.includes(data.id),
         category_name: data.category.category_name,
       };
     });

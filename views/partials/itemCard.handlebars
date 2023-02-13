@@ -1,8 +1,13 @@
 {{! Card with picture and item name, color, quantity and delete buttons }}
-<div style="border: 1px black solid; width: 10rem; height: 10rem; margin: 1rem;" data-color="{{color_name}}" data-category="{{category_name}}" data-item="{{item_name}}">
+<div style="border: 1px black solid; width: 10rem; height: 20rem; margin: 1rem;" data-color="{{color_name}}" data-category="{{category_name}}" data-item="{{item_name}}">
   {{!-- Delete button if on home page --}}
   {{!-- Edit button if on home page --}}
   {{!-- Item.pictureLocation? --}}
+  {{#if item_has_pic}}
+    <img src="/img/items/{{item_id}}.webp" alt="" style="width: 200px; height: 200px;">
+  {{else}}
+    <img src="/img/items/image_not_available.png" alt="" style="width: 200px; height: 200px;">
+  {{/if}}
   <p>{{item_name}}</p>
   <p>{{color_name}}</p>
   <p>{{quantity}}</p>

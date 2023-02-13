@@ -269,18 +269,15 @@ const loadEdit = (e) => {
 }
 
 const quantityUp = (e) => {
-  let quantity = card.dataset.qty;
-  quantity++;
-  const quantityEl = e.target.parentElement.children[2]
-  quantityEl.innerText = `quantity: ${quantity}`
+  const quantityEl = e.target.parentElement.children[2];
+  quantityEl.innerText = `quantity: ${card.dataset.qty++}`;
+}
 
-}
 const quantityDown = (e) => {
-  let quantity = card.dataset.qty;
-  quantity--;
-  const quantityEl = e.target.parentElement.children[2]
-  quantityEl.innerText = `quantity: ${quantity}`
+  const quantityEl = e.target.parentElement.children[2];
+  quantityEl.innerText = `quantity: ${card.dataset.qty--}`;
 }
+
 const removeCard = async (e) => {
   const card = e.target.parentElement;
   const id = card.dataset.id;

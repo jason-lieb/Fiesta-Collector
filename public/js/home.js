@@ -19,7 +19,7 @@ const logout = async () => {
   if (response.ok) {
     document.location.replace('/login');
   } else {
-    hidden.classList.remove('hidden');
+    hidden.className = 'absolute flex justify-center top-0 w-full mt-5';
   }
 };
 

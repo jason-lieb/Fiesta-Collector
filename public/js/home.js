@@ -21,7 +21,6 @@ const logout = async () => {
     document.location.replace('/login');
   } else {
     hidden.classList.remove('hidden');
-    // alert ('Failed to log out');
   }
 };
 
@@ -270,21 +269,21 @@ const loadEdit = (e) => {
   const card = itemCardText.parentElement;
   card.prepend(deletebtn);
   card.prepend(savebtn);
-
-}
+};
 
 const quantityUp = (e) => {
   const quantityEl = e.target.parentElement.children[2];
-  quantityEl.innerText = `quantity: ${card.dataset.qty++}`;
-}
+  const card = e.target.parentElement.parentElement;
+  quantityEl.innerText = `Quantity: ${++card.dataset.qty}`;
+};
 
 const quantityDown = (e) => {
   const quantityEl = e.target.parentElement.children[2];
-  quantityEl.innerText = `quantity: ${card.dataset.qty--}`;
-}
-
-
-
+  const card = e.target.parentElement.parentElement;
+  if (card.dataset.qty > 1) {
+    quantityEl.innerText = `Quantity: ${--card.dataset.qty}`;
+  }
+};
 
 const removeCard = async (e) => {
   const card = e.target.parentElement;
@@ -299,6 +298,7 @@ const removeCard = async (e) => {
     console.error(err);
   }
 };
+
 const saveChoice = async (e) => {
   // e.target is currently <i class="save ...">
   // create a variable for id with the same way as you did in removeCard
@@ -324,11 +324,12 @@ const saveChoice = async (e) => {
 
 init();
 document.querySelector('#logOutButton').addEventListener('click', logout);
+
 x.addEventListener('click', () => {
   hidden.setAttribute('class', 'hidden');
 });
-itemCardEl.addEventListener('click', (e) => {
 
+itemCardEl.addEventListener('click', (e) => {
   switch (e.target.className.split(' ')[0]) {
     case 'edit':
       loadEdit(e);

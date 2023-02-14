@@ -12,21 +12,25 @@ const signUpFormHandler = async (event) => {
   let passwordInputEl = document.querySelector('#passwordInput').value.trim();
 
   if (nameInputEl && emailInputEl && passwordInputEl) {
-    try {
-      const login = await fetch('/signup', {
-        method: 'POST',
-        body: JSON.stringify({
-          name: nameInputEl,
-          email: emailInputEl,
-          password: passwordInputEl,
-        }),
-        headers: { 'Content-Type': 'application/json' },
-      });
-      if (login.ok) {
-        window.location.href = '/login';
+    if (!validateEmail(emailInputEl)) {
+      return;
+    } else {
+      try {
+        const login = await fetch('/signup', {
+          method: 'POST',
+          body: JSON.stringify({
+            name: nameInputEl,
+            email: emailInputEl,
+            password: passwordInputEl,
+          }),
+          headers: { 'Content-Type': 'application/json' },
+        });
+        if (login.ok) {
+          window.location.href = '/login';
+        }
+      } catch (err) {
+        console.error(err);
       }
-    } catch (err) {
-      console.error(err);
     }
   }
 };
@@ -58,3 +62,15 @@ document.querySelector('#passwordInput').addEventListener('keydown', (e) => {
     signUpFormHandler(e);
   }
 });
+
+function validateEmail(email) {
+  if (
+    email.match(
+      /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    )
+  ) {
+    return true;
+  }
+  alert('You have entered an invalid email address!');
+  return false;
+}

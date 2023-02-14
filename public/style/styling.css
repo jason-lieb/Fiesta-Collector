@@ -3,9 +3,9 @@
   border-bottom: 2px solid rgb(82 82 91)
 }
 
-.line {
+/* .line {
   border-bottom: 2px solid rgb(161 161 170);
-}
+} */
 
 @media (min-width: 1024px) {
   .line {
@@ -15,15 +15,18 @@
   #filters {
     position: fixed;
     height: calc(100vh - 80px);
-    width: 16rem;
+    width: 20rem;
     overflow: scroll;
     border: none;
   }
-  main {
-    margin-left: 16rem !important;
+  #main {
+    margin-left: 20rem;
+    min-height: calc(100vh - 80px);
   }
 }
 
-/* #filters {
-
-} */
+@media (max-width: 1024px) {
+  #filters {
+    border-bottom: 2px solid rgb(161 161 170);
+  }
+}

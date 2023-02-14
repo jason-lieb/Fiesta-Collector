@@ -1,6 +1,6 @@
-{{!-- <Tailwind class="left-1 top-1 hover:text-red-600 ml-3 inline-block" --}}
-{{!-- <Tailwind class="ml-[226px]" --}}
-{{!-- <Tailwind class="ml-[105px]" --}}
+{{!-- <Tailwind class="left-4 top-4 hover:text-red-600 ml-3 inline-block" --}}
+{{!-- <Tailwind class="top-2 left-2 ml-[226px]" --}}
+{{!-- <Tailwind class="right-2 ml-[105px]" --}}
 {{!-- <Tailwind class="ml-[118px]" --}}
 {{!-- <Tailwind class="ml-5" --}}
 
@@ -10,10 +10,10 @@
   {{else}}
     <img src='/img/items/image_not_available.png' alt='not available' class='img w-[270px] h-[270px]'>
   {{/if}}
-  <div class='text-center bg-zinc-600 h-max text-white'>
-      <p class='font-dosis text-xl'>{{item_name}}</p>
-      <p class='font-dosis text-xl'>{{color_name}}</p>
-      <p class='font-dosis text-xl'>Quantity: {{quantity}}</p>
+  <div class='text-center bg-zinc-600 text-white h-32 flex flex-col justify-evenly'>
+    <p class='font-dosis text-xl'>{{item_name}}</p>
+    <p class='font-dosis text-xl'>{{color_name}}</p>
+    <p class='font-dosis text-xl'>Quantity: {{quantity}}</p>
   </div>
-  <i class='edit fa-solid fa-pen-to-square text-white absolute right-1 bottom-1 hover:text-orange-400'></i>
+  <i class='edit fa-solid fa-pen-to-square text-white absolute right-2 bottom-2 hover:text-orange-400'></i>
 </div>

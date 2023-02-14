@@ -1,36 +1,45 @@
 <aside id="filters" class='sm:w-full'>
   <div class='text-center lg:text-left'>
-    <div class=' flex flex-wrap justify-evenly pt-1 md:pt-2 lg:grid-col ml-5'>
-      <div class='mb-3 w-1/5 lg:w-64'>
+    <div class='flex flex-col items-center lg:items-start pt-3 ml-5'>
+      <div class='mb-3 w-64 relative'>
+        <i class="fa-angle-down fa-solid absolute top-1.5 left-44 lg:left-24"></i>
         <p class='font-dosis text-lg lg:mb-3'>Categories</p>
-        <ul id='categoryFilters'>
-          {{#each categories as |category|}}
-            <li>{{category}}</li>
-          {{/each}}
-        </ul>
-        <br>
-        <ul id='selectedCategoryFilters'></ul>
+        <div class="accordion">
+          <ul id='categoryFilters'>
+            {{#each categories as |category|}}
+              <li class="font-dosis">{{category}}</li>
+            {{/each}}
+          </ul>
+          <br>
+          <ul id='selectedCategoryFilters'></ul>
+        </div>
       </div>
       {{#if home}}
-        <div class='mb-3 w-1/5 lg:w-64'>
-          <p class='font-dosis text-lg lg:mb-3'>Color</p>
-          <ul id='colorFilters'>
-            {{#each colors as |color|}}
-              <li>{{color}}</li>
-            {{/each}}
-          </ul>
-          <br>
-          <div id='selectedColorFilters'></div>
+        <div class='mb-3 w-64 relative'>
+          <i class="fa-angle-down fa-solid absolute top-1.5 left-40 lg:left-14"></i>
+          <p class='font-dosis text-lg lg:mb-3'>Colors</p>
+          <div class="accordion">
+            <ul id='colorFilters'>
+              {{#each colors as |color|}}
+                <li class="font-dosis">{{color}}</li>
+              {{/each}}
+            </ul>
+            <br>
+            <ul id='selectedColorFilters'></ul>
+          </div>
         </div>
-        <div class='mb-3 w-1/5 lg:w-64'>
-          <p class='font-dosis text-lg lg:mb-3'>Item</p>
-          <ul id='itemFilters'>
-            {{#each items as |item|}}
-              <li>{{item}}</li>
-            {{/each}}
-          </ul>
-          <br>
-          <div id='selectedItemFilters'></div>
+        <div class='mb-3 w-64 relative'>
+          <i class="fa-angle-down fa-solid absolute top-1.5 left-40 lg:left-12"></i>
+          <p class='font-dosis text-lg lg:mb-3'>Items</p>
+          <div class="accordion">
+            <ul id='itemFilters'>
+              {{#each items as |item|}}
+                <li class="font-dosis">{{item}}</li>
+              {{/each}}
+            </ul>
+            <br>
+            <ul id='selectedItemFilters'></ul>
+          </div>
         </div>
       {{/if}}
       {{!-- {{#if browse}}

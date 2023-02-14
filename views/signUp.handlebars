@@ -1,44 +1,43 @@
 <main class='' style="background-image: url('/img/sun.jpg')">
-    <div class='h-full flex items-center flex-col md:justify-center'>
-        <div class='bg-white rounded-md p-8 mt-16 md:mt-0'>
-            <div class='my-8'>
-                <h1 class='font-serif text-4xl md:text-5xl lg:text-6xl text-center pt-5'>Fiesta Collector</h1>
-            </div>
-            <ol>
-                <li class='flex flex-col'>
-                {{!-- <li class='flex gap-4 sm:grid-cols-1 md:grid-rows-1'> --}}
-                    <input id='nameInput' placeholder='Your name' class='hover:bg-zinc-300 rounded-lg border-solid border-2 border-zinc-500 text-center w-full my-2 py-1 font-dosis lg:text-lg'/>
-                    <input id='emailInput' placeholder='example@email.com' class='hover:bg-zinc-300 rounded-lg border-solid border-2 border-zinc-500 text-center w-full my-2 py-1 font-dosis lg:text-lg'/>
-                    <div class="flex items-center mt-4 mb-4 relative z-10">
-                      <i id='toggle' class="fa-regular fa-eye-slash ml-2 text-zinc-500 z-10" style="width: 1.25rem;"></i>
-                      <input id='passwordInput' type='password' placeholder='Password' minlength='8' maxlength='20' class='absolute hover:bg-zinc-300 rounded-lg border-solid border-2 border-zinc-500 text-center w-full my-2 py-1 font-dosis lg:text-lg'>
-                    </div>
-                </li>
-                <li class='flex justify-center'>
-                    <button id='button' class='bg-orange-400 hover:bg-zinc-300 w-full rounded-lg mt-4 mb-4 py-2 font-dosis'>
-                      Sign Up
-                    </button>
-                </li>
-                <div id='hidden' class='hidden'>
-                    <div class='h-10 w-[263px] md:w-[351px] lg:w-[438px] relative rounded-lg text-center text-zinc-600 border-4 border-orange-400 flex items-center'>
-                        <h2 class='font-dosis text-xl w-full'>Not a valid email</h2>
-                        <i id='x' class='absolute fa-solid fa-xmark text-xl right-4'></i>
-                    </div>
-                </div>
-                <div id='hiddentwo' class='hidden'>
-                    <div class='h-10 w-[263px] md:w-[351px] lg:w-[438px] relative rounded-lg text-center text-zinc-600 border-4 border-orange-400 flex items-center'>
-                        <h2 class='font-dosis text-md text-zinc-600 w-full'>Password must contain 8 to 20 characters</h2>
-                        <i id='xtwo' class='absolute fa-solid fa-xmark text-xl right-4'></i>
-                    </div>
-                </div>
-                <hr class='mb-5 border-2 border-zinc-500'>
-                <li class='text-center m-3'>
-                    <h4 class='text-xl font-dosis'>Already have an account?</h4>
-                    <a href='./login' class='text-orange-400 hover:text-zinc-400 font-dosis text-lg'>Login here</a>
-                </li>
-            </ol>
+  <div class='h-full flex items-center flex-col md:justify-center'>
+    <div class='bg-white rounded-md p-8 mt-16 md:mt-0'>
+      <div class='my-8'>
+          <h1 class='font-serif text-4xl md:text-5xl lg:text-6xl text-center pt-5'>Fiesta Collector</h1>
+      </div>
+      <ol>
+        <li class='flex flex-col'>
+          <input id='nameInput' placeholder='Your name' class='hover:bg-zinc-300 rounded-lg border-solid border-2 border-zinc-500 text-center w-full my-2 py-1 font-dosis lg:text-lg'/>
+          <input id='emailInput' placeholder='example@email.com' class='hover:bg-zinc-300 rounded-lg border-solid border-2 border-zinc-500 text-center w-full my-2 py-1 font-dosis lg:text-lg'/>
+          <div class="flex items-center mt-4 mb-4 relative z-10">
+            <i id='toggle' class="fa-regular fa-eye-slash ml-2 text-zinc-500 z-10" style="width: 1.25rem;"></i>
+            <input id='passwordInput' type='password' placeholder='Password' minlength='8' maxlength='20' class='absolute hover:bg-zinc-300 rounded-lg border-solid border-2 border-zinc-500 text-center w-full my-2 py-1 font-dosis lg:text-lg'>
+          </div>
+        </li>
+        <li class='flex justify-center'>
+          <button id='button' class='bg-orange-400 hover:bg-zinc-300 w-full rounded-lg mt-4 mb-4 py-2 font-dosis'>
+            Sign Up
+          </button>
+        </li>
+        <div id='hidden' class='hidden'>
+          <div class='h-10 w-[263px] md:w-[351px] lg:w-[438px] relative rounded-lg text-center text-zinc-600 border-4 border-orange-400 flex items-center'>
+            <h2 class='font-dosis text-xl w-full'>Not a valid email</h2>
+            <i id='x' class='absolute fa-solid fa-xmark text-xl right-4'></i>
+          </div>
         </div>
+        <div id='hiddentwo' class='hidden'>
+          <div class='h-10 w-[263px] md:w-[351px] lg:w-[438px] relative rounded-lg text-center text-zinc-600 border-4 border-orange-400 flex items-center'>
+            <h2 class='font-dosis text-md text-zinc-600 w-full'>Password must contain 8 to 20 characters</h2>
+            <i id='xtwo' class='absolute fa-solid fa-xmark text-xl right-4'></i>
+          </div>
+        </div>
+        <hr class='mb-5 border-2 border-zinc-500'>
+        <li class='text-center m-3'>
+          <h4 class='text-xl font-dosis'>Already have an account?</h4>
+          <a href='./login' class='text-orange-400 hover:text-zinc-400 font-dosis text-lg'>Login here</a>
+        </li>
+      </ol>
     </div>
+  </div>
 </main>
 
 <script src='/js/signUp.js'></script>

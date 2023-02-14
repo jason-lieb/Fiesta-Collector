@@ -1,9 +1,9 @@
 {{> nav}}
 <div class='lg:flex'>
   {{> filters}}
-  <main class='my-3 col-span-4 line'>
+  <main id="main" class='line'>
     <h2 class='font-dosis text-center lg:text-left text-4xl mt-3 ml-14'>{{name}}'s Fiesta Collection</h2>
-    <div id='itemCards' class='flex flex-wrap justify-center lg:justify-start gap-4 m-6 ml-14'>
+    <div id='itemCards' class='flex flex-wrap justify-around lg:justify-start gap-4 m-6 ml-14'>
       {{#each inventory as |item|}}
         {{> itemCard}}
       {{/each}}

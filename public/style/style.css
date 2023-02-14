@@ -563,32 +563,40 @@ video {
   top: 0px;
 }
 
-.top-10 {
-  top: 2.5rem;
-}
-
-.top-\[-10\] {
-  top: -10;
-}
-
-.top-\[-30\] {
-  top: -30;
+.top-\[-34\] {
+  top: -34;
 }
 
 .top-\[-32\] {
   top: -32;
 }
 
-.top-\[-35\] {
-  top: -35;
+.top-\[-38\] {
+  top: -38;
 }
 
-.top-\[-36\] {
-  top: -36;
+.top-\[-37\] {
+  top: -37;
 }
 
-.top-\[-34\] {
-  top: -34;
+.top-\[\] {
+  top: ;
+}
+
+.top-\[-60\] {
+  top: -60;
+}
+
+.top-5 {
+  top: 1.25rem;
+}
+
+.left-\[30\] {
+  left: 30;
+}
+
+.left-\[-30\] {
+  left: -30;
 }
 
 .row-span-1 {
@@ -681,8 +689,8 @@ video {
   margin-top: 1.25rem;
 }
 
-.mt-\[120px\] {
-  margin-top: 120px;
+.mt-\[128px\] {
+  margin-top: 128px;
 }
 
 .mt-\[65px\] {
@@ -691,6 +699,18 @@ video {
 
 .mt-\[73px\] {
   margin-top: 73px;
+}
+
+.mb-\[\] {
+  margin-bottom: ;
+}
+
+.mb-\[20px\] {
+  margin-bottom: 20px;
+}
+
+.-mb-\[20px\] {
+  margin-bottom: -20px;
 }
 
 .block {
@@ -777,6 +797,10 @@ video {
 
 .grid-cols-\[1fr_5fr\] {
   grid-template-columns: 1fr 5fr;
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .grid-rows-3 {
@@ -1102,6 +1126,10 @@ video {
     height: 6rem;
   }
 
+  .sm\:h-60 {
+    height: 15rem;
+  }
+
   .sm\:w-full {
     width: 100%;
   }
@@ -1165,6 +1193,18 @@ video {
     top: -36;
   }
 
+  .lg\:top-\[-34\] {
+    top: -34;
+  }
+
+  .lg\:top-\[-30\] {
+    top: -30;
+  }
+
+  .lg\:top-\[-38\] {
+    top: -38;
+  }
+
   .lg\:mb-3 {
     margin-bottom: 0.75rem;
   }
@@ -1193,6 +1233,12 @@ video {
     height: 100%;
   }
 
+  @media (min-width: 1024px) {
+    .lg\:lg\:h-full {
+      height: 100%;
+    }
+  }
+
   .lg\:w-48 {
     width: 12rem;
   }
@@ -1209,10 +1255,26 @@ video {
     width: 483px;
   }
 
+  .lg\:max-w-xs {
+    max-width: 20rem;
+  }
+
+  .lg\:max-w-\[\] {
+    max-width: ;
+  }
+
+  .lg\:max-w-\[192px\] {
+    max-width: 192px;
+  }
+
   .lg\:space-y-64 > :not([hidden]) ~ :not([hidden]) {
     --tw-space-y-reverse: 0;
     margin-top: calc(16rem * calc(1 - var(--tw-space-y-reverse)));
     margin-bottom: calc(16rem * var(--tw-space-y-reverse));
+  }
+
+  .lg\:text-left {
+    text-align: left;
   }
 
   .lg\:text-5xl {
@@ -1228,5 +1290,10 @@ video {
   .lg\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
+  }
+
+  .lg\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
   }
 }

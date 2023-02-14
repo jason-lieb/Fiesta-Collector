@@ -1,31 +1,18 @@
-/* * {
-    background-color: rgb(212 212 216);
-} */
-
-/* .boho {
-    background-image: url('../../img/boho.jpg');
-    background-repeat: repeat;
-} */
-
-/* .orange {
-    background-color: rgb(23, 23, 223);
-} */
-
-/* body {
-    overflow: hidden;
-    height: 100vh;
-}
-
-.scroll {
-    overflow-y: auto;
-} */
- 
-.line {
-    border-right: 2px solid rgb(161 161 170);
-    height: 100%;
-}
 
 .img {
     border-bottom: 2px solid rgb(82 82 91)
 }
 
+@media (min-width: 1024px) {
+    .line {
+        border-right: 2px solid rgb(161 161 170);
+        height: 100%;
+    }
+}
+
+@media (min-width: 640px) {
+    .line {
+        border-bottom: 2px solid rgb(161 161 170);
+        
+    }
+}

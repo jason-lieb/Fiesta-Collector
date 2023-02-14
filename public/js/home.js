@@ -252,6 +252,9 @@ const init = () => {
     const itemCardEl = document.querySelector('#itemCards');
     itemCardEl.addEventListener('click', btnRouter);
   }
+  if (document.querySelector('#addItem')) {
+    document.querySelector('#addItem').addEventListener('click', addItem);
+  }
 };
 
 const loadEdit = (e) => {
@@ -336,6 +339,29 @@ const saveChoice = async (e) => {
 const redirectToItemPage = (e) => {
   const card = e.target.parentElement.parentElement;
   document.location.replace(`/browse/${card.dataset.id}`);
+};
+
+const addItem = async (e) => {
+  e.preventDefault();
+  const color = document.querySelector('select').value;
+  if (color === 'Select one') return;
+  const qty = document.querySelector('input').value;
+  const id = window.location.pathname.split('/')[2];
+  try {
+    const response = await fetch(`/browse/${id}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        color,
+        qty,
+      }),
+    });
+    if (response.ok) {
+      window.location.href = '/';
+    }
+  } catch (err) {
+    console.error(err);
+  }
 };
 
 const btnRouter = (e) => {

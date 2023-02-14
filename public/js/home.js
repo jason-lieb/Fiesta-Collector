@@ -9,7 +9,6 @@ const global = {
 
 const hidden = document.querySelector('#hidden');
 const x = document.querySelector('#x');
-const itemCardEl = document.querySelector('#itemCards');
 
 const logout = async () => {
   const response = await fetch('/api/user/logout', {
@@ -247,6 +246,10 @@ const init = () => {
       .getElementById('selectedItemFilters')
       .addEventListener('click', (e) => deselectFilter(e, 'item'));
   }
+  if (document.querySelector('#itemCards')) {
+    const itemCardEl = document.querySelector('#itemCards');
+    itemCardEl.addEventListener(btnRouter);
+  }
 };
 
 const loadEdit = (e) => {
@@ -334,6 +337,11 @@ const saveChoice = async (e) => {
   // }
 };
 
+const redirectToItemPage = (e) => {
+  const card = e.target.parentElement.parentElement;
+  document.location.replace(`/browse/${card.dataset.id}`);
+};
+
 init();
 document.querySelector('#logOutButton').addEventListener('click', logout);
 
@@ -341,7 +349,7 @@ x.addEventListener('click', () => {
   hidden.setAttribute('class', 'hidden');
 });
 
-itemCardEl.addEventListener('click', (e) => {
+const btnRouter = (e) => {
   switch (e.target.className.split(' ')[0]) {
     case 'edit':
       loadEdit(e);
@@ -358,5 +366,8 @@ itemCardEl.addEventListener('click', (e) => {
     case 'saveBtn':
       saveChoice(e);
       break;
+    case 'addItem':
+      redirectToItemPage(e);
+      break;
   }
-});
+};

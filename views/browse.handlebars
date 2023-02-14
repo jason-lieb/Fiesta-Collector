@@ -1,8 +1,8 @@
 {{> nav}}
 <div class='lg:flex'>
   {{> filters}}
-  <main id="main" class='scroll my-3 col-span-4 line'>
-    <div id='itemCards' class='flex flex-wrap gap-4 m-8 ml-14'>
+  <main id="main" class='scroll line'>
+    <div id='itemCards' class='flex flex-wrap justify-around lg:justify-start gap-4 m-8 ml-14'>
       {{#each items as |item|}}
         {{> browseCard}}
       {{/each}}

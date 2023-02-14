@@ -60,7 +60,7 @@ const selectFilter = (e, filterType) => {
   const newSelected = document.createElement('li');
   newSelected.style.listStyleType = 'none';
   newSelected.textContent = selectedFilter;
-  newSelected.className = 'text-orange-400';
+  newSelected.className = 'text-orange-400 font-dosis';
   selectedFiltersDOM.appendChild(newSelected);
   // Hides selected category from unselected categories
   e.target.style.display = 'none';
@@ -235,6 +235,10 @@ const init = () => {
   if (document.querySelector('#addItem')) {
     document.querySelector('#addItem').addEventListener('click', addItem);
   }
+
+  if (document.querySelector('#filters')) {
+    document.querySelector('#filters').addEventListener('click', accordion);
+  }
 };
 
 const loadEdit = (e) => {
@@ -242,16 +246,16 @@ const loadEdit = (e) => {
   itemCard.removeChild(itemCard.children[2]);
   const deletebtn = document.createElement('i');
   deletebtn.className =
-    'deleteBtn fa-solid fa-xmark absolute text-2xl text-zinc-600 top-1 left-1 hover:text-red-600';
+    'deleteBtn fa-solid fa-xmark absolute text-2xl text-zinc-600 top-2 left-2 hover:text-red-600';
   const left = document.createElement('i');
   left.className =
-    'leftBtn fa-solid fa-chevron-left absolute bottom-1 left-1 text-white hover:text-orange-400';
+    'leftBtn fa-solid fa-chevron-left absolute bottom-4 left-4 text-white hover:text-orange-400';
   const right = document.createElement('i');
   right.className =
-    'rightBtn fa-solid fa-chevron-right absolute bottom-1 right-1 text-white hover:text-orange-400';
+    'rightBtn fa-solid fa-chevron-right absolute bottom-4 right-4 text-white hover:text-orange-400';
   const savebtn = document.createElement('i');
   savebtn.className =
-    'saveBtn fa-solid fa-floppy-disk absolute top-1 right-1 text-2xl text-zinc-600 hover:text-orange-400';
+    'saveBtn fa-solid fa-floppy-disk absolute top-2 right-2 text-2xl text-zinc-600 hover:text-orange-400';
   itemCard.appendChild(left);
   itemCard.appendChild(right);
   itemCard.prepend(deletebtn);
@@ -338,6 +342,42 @@ const addItem = async (e) => {
     }
   } catch (err) {
     console.error(err);
+  }
+};
+
+const accordion = (e) => {
+  if (e.target.className.split(' ')[0] === 'fa-angle-down') {
+    e.target.parentElement.children[2].className = 'accordion hidden';
+    switch (e.target.parentElement.children[1].textContent) {
+      case 'Categories':
+        e.target.className =
+          'fa-angle-up fa-solid absolute top-1.5 left-44 lg:left-24';
+        break;
+      case 'Colors':
+        e.target.className =
+          'fa-angle-up fa-solid absolute top-1.5 left-40 lg:left-14';
+        break;
+      case 'Items':
+        e.target.className =
+          'fa-angle-up fa-solid absolute top-1.5 left-40 lg:left-12';
+        break;
+    }
+  } else if (e.target.className.split(' ')[0] === 'fa-angle-up') {
+    e.target.parentElement.children[2].className = 'accordion';
+    switch (e.target.parentElement.children[1].textContent) {
+      case 'Categories':
+        e.target.className =
+          'fa-angle-down fa-solid absolute top-1.5 left-44 lg:left-24';
+        break;
+      case 'Colors':
+        e.target.className =
+          'fa-angle-down fa-solid absolute top-1.5 left-40 lg:left-14';
+        break;
+      case 'Items':
+        e.target.className =
+          'fa-angle-down fa-solid absolute top-1.5 left-40 lg:left-12';
+        break;
+    }
   }
 };
 

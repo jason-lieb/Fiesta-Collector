@@ -260,8 +260,7 @@ const loadEdit = (e) => {
   const right = document.createElement('i');
   right.className = 'rightBtn fa-solid fa-chevron-right absolute ml-[245px] mt-[65px] text-white hover:text-orange-400';
   const savebtn = document.createElement('i');
-  savebtn.className =
-    'saveBtn fa-solid fa-floppy-disk absolute ml-[240px] mt-3 text-2xl text-zinc-600 hover:text-orange-400';
+  savebtn.className = 'saveBtn fa-solid fa-floppy-disk absolute ml-[236px] mt-3 text-2xl text-zinc-600 hover:text-orange-400';
   itemCardText.appendChild(left);
   itemCardText.appendChild(right);
   const card = itemCardText.parentElement;
@@ -296,39 +295,37 @@ const removeCard = async (e) => {
   }
 };
 const saveChoice = async (e) => {
-  // e.target is currently <i class="save ...">
-  const card = e.target.parentElement.parentElement;
-  // create a variable for id with the same way as you did in removeCard
+  const card = e.target.parentElement;
   const id = card.dataset.id;
-  // also create variables for item_name, qty, and color the same way as you did id
   const itemName = card.dataset.item_name;
   const qty = card.dataset.qty;
   const color = card.dataset.color_name;
-  // remove delete, save, left, and right buttons the same way you did for the edit btn
-  const itemCardText = e.target.parentElement;
-  itemCardText.removeChild(itemCardText.children[3]);
-  itemCardText.removeChild(itemCardText.children[4]);
+  console.log(card.children);
   card.removeChild(card.children[0]);
-  card.removeChild(card.children[1]);
-  // create a new edit button and add it to the dom the same way you did for the edit btn
+  card.removeChild(card.children[0]);
+
+  const itemCardText = card.children[1]
+  itemCardText.removeChild(itemCardText.children[3]);
+  itemCardText.removeChild(itemCardText.children[3]);
+
   const edit = document.createElement('i');
   edit.className = 'edit fa-solid fa-pen-to-square absolute ml-[245px] mt-[65px] hover:text-orange-400';
-
-  try {
-    const response = await fetch(`/api/inventory/${id}`, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: {
-        id,
-        user_id,
-        item_id,
-        color_id,
-        quantity,
-      },
-    });
-  } catch (err) {
-    console.error(err);
-  }
+  itemCardText.appendChild(edit);
+  // try {
+  //   const response = await fetch(`/api/inventory/${id}`, {
+  //     method: 'PUT',
+  //     headers: { 'Content-Type': 'application/json' },
+  //     body: {
+  //       id,
+  //       user_id,
+  //       item_id,
+  //       color_id,
+  //       quantity,
+  //     },
+  //   });
+  // } catch (err) {
+  //   console.error(err);
+  // }
 };
 
 init();

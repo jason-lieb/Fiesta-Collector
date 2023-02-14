@@ -20,7 +20,7 @@ const loginFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/');
     } else {
-      hidden.removeAttribute('class', 'hidden');
+      hidden.className = 'flex justify-center mb-4';
     }
   }
 };

@@ -1200,6 +1200,10 @@ video {
     margin-left: 450px;
   }
 
+  .lg\:flex {
+    display: flex;
+  }
+
   .lg\:grid {
     display: grid;
   }

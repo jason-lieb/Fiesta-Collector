@@ -42,9 +42,14 @@ exports.getOne = async (req, res) => {
     const imagesNotAvailable = [
       1, 2, 21, 23, 24, 27, 28, 30, 31, 32, 46, 51, 52, 53, 64,
     ];
+    const colorObjects = await Color.findAll();
+    const colors = colorObjects.map(
+      (data) => data.get({ plain: true }).color_name
+    );
     res.render('item', {
       item,
       item_has_pic: !imagesNotAvailable.includes(item.id),
+      colors,
     });
   } catch (err) {
     res.status(500).json(err);

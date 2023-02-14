@@ -6,7 +6,7 @@ exports.get = async (req, res) => {
     const itemObjects = await Item.findAll({ include: [{ model: Category }] });
     const dataForItems = itemObjects.map((data) => data.get({ plain: true }));
     const imagesNotAvailable = [
-      1, 2, 21, 23, 24, 27, 28, 30, 31, 32, 46, 51, 52, 53, 64,
+      // 1, 2, 21, 23, 24, 27, 28, 30, 31, 32, 46, 51, 52, 53, 64,
     ];
     const items = dataForItems.map((data) => {
       return {
@@ -40,7 +40,7 @@ exports.getOne = async (req, res) => {
     const itemObject = await Item.findByPk(req.params.id);
     const item = itemObject.get({ plain: true });
     const imagesNotAvailable = [
-      1, 2, 21, 23, 24, 27, 28, 30, 31, 32, 46, 51, 52, 53, 64,
+      // 1, 2, 21, 23, 24, 27, 28, 30, 31, 32, 46, 51, 52, 53, 64,
     ];
     const colorObjects = await Color.findAll();
     const colors = colorObjects.map(

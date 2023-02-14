@@ -59,6 +59,7 @@ const selectFilter = (e, filterType) => {
   }
   // Creates DOM element for selected filter and adds to selected filter section
   const newSelected = document.createElement('li');
+  newSelected.style.listStyleType = 'none';
   newSelected.textContent = selectedFilter;
   selectedFiltersDOM.appendChild(newSelected);
   // Hides selected category from unselected categories
@@ -248,7 +249,7 @@ const init = () => {
   }
   if (document.querySelector('#itemCards')) {
     const itemCardEl = document.querySelector('#itemCards');
-    itemCardEl.addEventListener(btnRouter);
+    itemCardEl.addEventListener('click', btnRouter);
   }
 };
 
@@ -342,13 +343,6 @@ const redirectToItemPage = (e) => {
   document.location.replace(`/browse/${card.dataset.id}`);
 };
 
-init();
-document.querySelector('#logOutButton').addEventListener('click', logout);
-
-x.addEventListener('click', () => {
-  hidden.setAttribute('class', 'hidden');
-});
-
 const btnRouter = (e) => {
   switch (e.target.className.split(' ')[0]) {
     case 'edit':
@@ -371,3 +365,10 @@ const btnRouter = (e) => {
       break;
   }
 };
+
+init();
+document.querySelector('#logOutButton').addEventListener('click', logout);
+
+x.addEventListener('click', () => {
+  hidden.setAttribute('class', 'hidden');
+});

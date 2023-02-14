@@ -12,15 +12,22 @@ const signUpFormHandler = async (event) => {
   let passwordInputEl = document.querySelector('#passwordInput').value.trim();
 
   if (nameInputEl && emailInputEl && passwordInputEl) {
-    const login = await fetch('/signup', {
-      method: 'POST',
-      body: JSON.stringify({
-        name: nameInputEl,
-        email: emailInputEl,
-        password: passwordInputEl,
-      }),
-      headers: { 'Content-Type': 'application/json' },
-    });
+    try {
+      const login = await fetch('/signup', {
+        method: 'POST',
+        body: JSON.stringify({
+          name: nameInputEl,
+          email: emailInputEl,
+          password: passwordInputEl,
+        }),
+        headers: { 'Content-Type': 'application/json' },
+      });
+      if (login.ok) {
+        window.location.href = '/login';
+      }
+    } catch (err) {
+      console.error(err);
+    }
   }
 };
 

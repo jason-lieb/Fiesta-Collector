@@ -256,10 +256,9 @@ const loadEdit = (e) => {
   const deletebtn = document.createElement('i');
   deletebtn.className = 'deleteBtn fa-solid fa-xmark absolute text-2xl text-zinc-600 ml-3 mt-3 hover:text-red-600';
   const left = document.createElement('i');
-  left.className = 'leftBtn fa-solid fa-chevron-left absolute ml-[13px] mt-[65px] text-zinc-600 hover:text-orange-400';
+  left.className = 'leftBtn fa-solid fa-chevron-left absolute ml-[13px] mt-[65px] text-white hover:text-orange-400';
   const right = document.createElement('i');
-  right.className = 
-    'rightBtn fa-solid fa-chevron-right absolute ml-[245px] mt-[65px] text-zinc-600 hover:text-orange-400';
+  right.className = 'rightBtn fa-solid fa-chevron-right absolute ml-[245px] mt-[65px] text-white hover:text-orange-400';
   const savebtn = document.createElement('i');
   savebtn.className =
     'saveBtn fa-solid fa-floppy-disk absolute ml-[240px] mt-3 text-2xl text-zinc-600 hover:text-orange-400';

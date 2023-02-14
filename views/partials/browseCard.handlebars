@@ -1,4 +1,4 @@
-<div id='card' class='container border-2 border-zinc-600 w-64 h-[363px] rounded' data-color="{{color_name}}" data-category="{{category_name}}" data-item="{{item_name}}" data-id="{{id}}">
+<div id='card' class='container border-2 border-zinc-600 w-64 h-[363px] rounded' data-color="{{color_name}}" data-category="{{category_name}}" data-item="{{item_name}}" data-id="{{item_id}}">
   {{#if item_has_pic}}
     <img src='/img/items/{{item_id}}.webp' alt='dish' class='img w-[270px] h-[270px]'>
   {{else}}
@@ -6,7 +6,6 @@
   {{/if}}
   <div class='text-center grid grid-rows-6 h-[89px] bg-zinc-600 text-white'>
       <p class='font-dosis text-xl row-start-2 row-end-3'>{{item_name}}</p>
-      <p class='font-dosis text-xl row-start-4 row-end-5'>{{color_name}}</p>
-      <i class='fa-solid fa-plus absolute ml-[245px] mt-[65px] text-xl hover:text-orange-400'></i>
+      <i class='addItem fa-solid fa-plus absolute ml-[245px] mt-[65px] text-xl hover:text-orange-400'></i>
   </div>
 </div>

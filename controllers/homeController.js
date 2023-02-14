@@ -25,7 +25,7 @@ exports.get = async (req, res) => {
           ? dataForInventory[0].user.name
           : dataForInventory.user.name;
       const imagesNotAvailable = [
-        1, 2, 21, 23, 24, 27, 28, 30, 31, 32, 46, 51, 52, 53, 64,
+        // 1, 2, 21, 23, 24, 27, 28, 30, 31, 32, 46, 51, 52, 53, 64,
       ];
       const inventory = dataForInventory.map((data) => {
         return {

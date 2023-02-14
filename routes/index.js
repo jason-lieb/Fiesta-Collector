@@ -28,7 +28,7 @@ router.use(middleware.auth);
 //localhost:5500/browse
 router.get('/browse', browseController.get);
 router.get('/browse/:id', browseController.getOne);
-router.post('/browse', browseController.postOne);
+router.post('/browse/:id', browseController.postOne);
 
 //localhost:5500/
 router.get('/', homeController.get);

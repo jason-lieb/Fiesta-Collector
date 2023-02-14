@@ -1,4 +1,4 @@
-const { Item, Category, Color } = require('../models');
+const { Item, Category, Color, Inventory } = require('../models');
 
 exports.get = async (req, res) => {
   try {
@@ -58,8 +58,15 @@ exports.getOne = async (req, res) => {
 
 exports.postOne = async (req, res) => {
   try {
-    const inventoryData = await Inventory.create(req.body);
-    console.log(inventoryData);
+    const item_id = +req.params.id;
+    const user_id = req.session.user_id;
+    const color = await Color.findAll({
+      where: { color_name: req.body.color },
+    });
+    const color_id = color[0].get({ plain: true }).id;
+    const quantity = +req.body.qty;
+    const createData = { user_id, item_id, color_id, quantity };
+    const inventoryData = await Inventory.create(createData);
     res.status(200).json(inventoryData);
   } catch (err) {
     res.status(500).json(err);

@@ -1,5 +1,5 @@
 {{> nav}}
-
+{{!-- 
 <div style="border: 1px black solid;">
   {{#if item_has_pic}}
     <img src='/img/items/{{item.id}}.webp' alt='dish' class='img w-[270px] h-[270px]'>
@@ -24,5 +24,32 @@
     </div>
     <button>Add to Inventory</button>
   </form>
+</div> --}}
 
+<div class=''>
+  <p class='font-dosis text-zinc-600 text-4xl mt-12 text-center underline'>{{item.item_name}}</p>
+  <div class='flex justify-center gap-24 mt-16'>
+    {{#if item_has_pic}}
+      <img src='/img/items/{{item.id}}.webp' alt='dish' class='border-4 border-zinc-600 rounded w-[400px] h-[400px]'>
+    {{else}}
+      <img src='/img/items/image_not_available.png' alt='not available' class='img w-[400px] h-[400px]'>
+    {{/if}}
+    <form action="post">
+    <div class='mb-3 w-1/5 lg:w-64'>
+      <p class='font-dosis text-lg'>Color</p>
+      <select aria-label='Select Year' class='form-select appearance-none block w-full px-3 py-1.5 font-dosis font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300
+      rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-zinc-600 focus:outline-none' aria-label='Default select example'>
+          <option selected>Select one</option>
+          {{#each colors as |color|}}
+          <option value="{{color}}">{{color}}</option>
+          {{/each}}
+      </select>
+    </div>
+    <div class="flex flex-col">
+      <label for="quantity">Quantity</label>
+      <input type="number" name="quantity" value="1" min="1">
+    </div>
+    <button>Add to Inventory</button>
+  </form>
+  </div>
 </div>

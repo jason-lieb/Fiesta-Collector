@@ -62,6 +62,7 @@ const selectFilter = (e, filterType) => {
   // Creates DOM element for selected filter and adds to selected filter section
   const newSelected = document.createElement('li');
   newSelected.textContent = selectedFilter;
+  newSelected.className = 'text-orange-400';
   selectedFiltersDOM.appendChild(newSelected);
   // Hides selected category from unselected categories
   e.target.style.display = 'none';

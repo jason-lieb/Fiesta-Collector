@@ -325,6 +325,7 @@ x.addEventListener('click', () => {
   hidden.setAttribute('class', 'hidden');
 });
 itemCardEl.addEventListener('click', (e) => {
+
   switch (e.target.className.split(' ')[0]) {
     case 'edit':
       loadEdit(e);

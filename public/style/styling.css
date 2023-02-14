@@ -3,16 +3,13 @@
     border-bottom: 2px solid rgb(82 82 91)
 }
 
+.line {
+    border-bottom: 2px solid rgb(161 161 170); 
+}
+
 @media (min-width: 1024px) {
     .line {
         border-right: 2px solid rgb(161 161 170);
         height: 100%;
-    }
-}
-
-@media (min-width: 640px) {
-    .line {
-        border-bottom: 2px solid rgb(161 161 170);
-        
     }
 }

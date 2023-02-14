@@ -5,8 +5,8 @@
 <div class='lg:grid grid-cols-5'> {{! Change this grid columns later }}
   {{> filters}}
   <main class='m-3 col-span-4'>
-    <h2 class='font-dosis text-center lg:text-left text-4xl m-2'>{{name}}'s Fiesta Collection</h2>
-    <div id="itemCards" class="flex flex-wrap justify-center gap-4 m-4">
+    <h2 class='font-dosis text-center lg:text-left text-4xl mt-3 ml-14'>{{name}}'s Fiesta Collection</h2>
+    <div id='itemCards' class='flex flex-wrap justify-center lg:justify-start gap-4 m-6 ml-14'>
       {{#each inventory as |item|}}
         {{> itemCard}}
       {{/each}}

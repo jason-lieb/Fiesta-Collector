@@ -1,5 +1,5 @@
 
-<div id='card' class='container border-2 border-zinc-600 w-64 rounded' data-qty="{{quantity}}" data-color="{{color_name}}" data-category="{{category_name}}" data-item="{{item_name}}" data-id="{{id}}">
+<div id='card' class='container border-2 border-zinc-600 w-64 rounded relative' data-qty="{{quantity}}" data-color="{{color_name}}" data-category="{{category_name}}" data-item="{{item_name}}" data-id="{{id}}">
   {{#if item_has_pic}}
     <img src='/img/items/{{item_id}}.webp' alt='dish' class='img w-[270px] h-[270px]'>
   {{else}}
@@ -9,7 +9,9 @@
       <p class='font-dosis text-xl '>{{item_name}}</p>
       <p class='font-dosis text-xl '>{{color_name}}</p>
       <p class='font-dosis text-xl'>Quantity: {{quantity}}</p>
-      <i class='edit fa-solid fa-pen-to-square absolute ml-[245px] mt-[65px] hover:text-orange-400'></i>
   </div>
+  <i class='edit fa-solid fa-pen-to-square text-white absolute right-1 bottom-1 hover:text-orange-400'></i>
 </div>
 
+{{!-- <Tailwind classes added through javascript class="left-1 top-1" --}}
+{{!-- Change edit and save buttons for different locations of icons --}}

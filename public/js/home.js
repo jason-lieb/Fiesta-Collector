@@ -258,36 +258,35 @@ const init = () => {
 };
 
 const loadEdit = (e) => {
-  const itemCardText = e.target.parentElement;
-  itemCardText.removeChild(itemCardText.children[3]);
+  const itemCard = e.target.parentElement;
+  itemCard.removeChild(itemCard.children[2]);
   const deletebtn = document.createElement('i');
   deletebtn.className =
-    'deleteBtn fa-solid fa-xmark absolute text-2xl text-zinc-600 ml-3 mt-3 hover:text-red-600';
+    'deleteBtn fa-solid fa-xmark absolute text-2xl text-zinc-600 top-1 left-1 hover:text-red-600';
   const left = document.createElement('i');
   left.className =
-    'leftBtn fa-solid fa-chevron-left absolute ml-[13px] mt-[65px] text-white hover:text-orange-400';
+    'leftBtn fa-solid fa-chevron-left absolute bottom-1 left-1 text-white hover:text-orange-400';
   const right = document.createElement('i');
   right.className =
-    'rightBtn fa-solid fa-chevron-right absolute ml-[245px] mt-[65px] text-white hover:text-orange-400';
+    'rightBtn fa-solid fa-chevron-right absolute bottom-1 right-1 text-white hover:text-orange-400';
   const savebtn = document.createElement('i');
   savebtn.className =
-    'saveBtn fa-solid fa-floppy-disk absolute ml-[236px] mt-3 text-2xl text-zinc-600 hover:text-orange-400';
-  itemCardText.appendChild(left);
-  itemCardText.appendChild(right);
-  const card = itemCardText.parentElement;
-  card.prepend(deletebtn);
-  card.prepend(savebtn);
+    'saveBtn fa-solid fa-floppy-disk absolute top-1 right-1 text-2xl text-zinc-600 hover:text-orange-400';
+  itemCard.appendChild(left);
+  itemCard.appendChild(right);
+  itemCard.prepend(deletebtn);
+  itemCard.prepend(savebtn);
 };
 
 const quantityUp = (e) => {
-  const card = e.target.parentElement.parentElement;
-  const quantityEl = e.target.parentElement.children[2];
+  const card = e.target.parentElement;
+  const quantityEl = card.children[3].children[2];
   quantityEl.textContent = `Quantity: ${++card.dataset.qty}`;
 };
 
 const quantityDown = (e) => {
-  const quantityEl = e.target.parentElement.children[2];
-  const card = e.target.parentElement.parentElement;
+  const card = e.target.parentElement;
+  const quantityEl = card.children[3].children[2];
   if (card.dataset.qty > 1) {
     quantityEl.textContent = `Quantity: ${--card.dataset.qty}`;
   }
@@ -311,15 +310,13 @@ const saveChoice = async (e) => {
   const card = e.target.parentElement;
   card.removeChild(card.children[0]);
   card.removeChild(card.children[0]);
-
-  const itemCardText = card.children[1];
-  itemCardText.removeChild(itemCardText.children[3]);
-  itemCardText.removeChild(itemCardText.children[3]);
+  card.removeChild(card.children[2]);
+  card.removeChild(card.children[2]);
 
   const edit = document.createElement('i');
   edit.className =
-    'edit fa-solid fa-pen-to-square absolute ml-[245px] mt-[65px] hover:text-orange-400';
-  itemCardText.appendChild(edit);
+    'edit fa-solid fa-pen-to-square text-white absolute right-1 bottom-1 hover:text-orange-400';
+  card.appendChild(edit);
 
   const id = card.dataset.id;
   const qty = card.dataset.qty;

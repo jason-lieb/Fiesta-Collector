@@ -297,25 +297,38 @@ const removeCard = async (e) => {
 };
 const saveChoice = async (e) => {
   // e.target is currently <i class="save ...">
+  const card = e.target.parentElement.parentElement;
   // create a variable for id with the same way as you did in removeCard
+  const id = card.dataset.id;
   // also create variables for item_name, qty, and color the same way as you did id
+  const itemName = card.dataset.item_name;
+  const qty = card.dataset.qty;
+  const color = card.dataset.color_name;
   // remove delete, save, left, and right buttons the same way you did for the edit btn
+  const itemCardText = e.target.parentElement;
+  itemCardText.removeChild(itemCardText.children[3]);
+  itemCardText.removeChild(itemCardText.children[4]);
+  card.removeChild(card.children[0]);
+  card.removeChild(card.children[1]);
   // create a new edit button and add it to the dom the same way you did for the edit btn
-  // try {
-  //   const response = await fetch(`/api/inventory/${id}`, {
-  //     method: 'PUT',
-  //     headers: { 'Content-Type': 'application/json' },
-  //     body: {
-  //       id,
-  //       user_id,
-  //       item_id,
-  //       color_id,
-  //       quantity,
-  //     },
-  //   });
-  // } catch (err) {
-  //   console.error(err);
-  // }
+  const edit = document.createElement('i');
+  edit.className = 'edit fa-solid fa-pen-to-square absolute ml-[245px] mt-[65px] hover:text-orange-400';
+
+  try {
+    const response = await fetch(`/api/inventory/${id}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: {
+        id,
+        user_id,
+        item_id,
+        color_id,
+        quantity,
+      },
+    });
+  } catch (err) {
+    console.error(err);
+  }
 };
 
 init();

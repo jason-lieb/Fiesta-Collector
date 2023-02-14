@@ -6,7 +6,6 @@ const hiddentwo = document.querySelector('#hiddentwo');
 const x = document.querySelector('#x');
 const xtwo = document.querySelector('#xtwo');
 
-
 const signUpFormHandler = async (event) => {
   event.preventDefault();
   let nameInputEl = document.querySelector('#nameInput').value.trim();
@@ -18,8 +17,10 @@ const signUpFormHandler = async (event) => {
 
   if (nameInputEl && emailInputEl && passwordInputEl) {
     if (!validateEmail(emailInputEl)) {
-      return; 
+      return;
     }
+    console.log(passwordInputEl);
+    console.log(validatePassword(passwordInputEl));
     if (!validatePassword(passwordInputEl)) {
       return;
     } else {
@@ -91,8 +92,7 @@ function validateEmail(email) {
 }
 
 function validatePassword(password) {
-  if (password < 8 || password > 20) 
-   {
+  if (password.length >= 8 && password.length <= 20) {
     return true;
   }
   hiddentwo.className = 'flex justify-center mb-4';

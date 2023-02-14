@@ -20,10 +20,7 @@ exports.get = async (req, res) => {
         data.get({ plain: true })
       );
       // Grab name of user to pass to handlebars
-      const nameOfUser =
-        dataForInventory.length > 1
-          ? dataForInventory[0].user.name
-          : dataForInventory.user.name;
+      const nameOfUser = dataForInventory[0].user.name;
       const imagesNotAvailable = [
         // 1, 2, 21, 23, 24, 27, 28, 30, 31, 32, 46, 51, 52, 53, 64,
       ];

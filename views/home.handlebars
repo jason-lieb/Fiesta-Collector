@@ -2,12 +2,10 @@
 
 {{> nav}}
 
-
-
 <div class="grid grid-cols-[1fr_5fr] h-full"> {{! Change this grid columns later }}
   {{> filters}}
   <main>
-    <h2 class='font-dosis text-xl m-2'>{{name}}'s Fiesta Collection</h2>
+    <h2 class='font-dosis text-4xl m-2'>{{name}}'s Fiesta Collection</h2>
     <div id="itemCards" class="flex flex-wrap gap-4 m-2">
       {{#each inventory as |item|}}
         {{> itemCard}}
@@ -16,16 +14,3 @@
   </main>
 </div>
 
-
-<div class="modal-container hidden">
-  <div class="model">
-    <h2 class='text-zince-600 text-3xl'>Card Edit</h2>
-    <img src='/img/sun.jpg' alt='dish' class='img'> 
-    <div class='text-center grid grid-rows-3 '>
-      <p class='font-dosis text-xl '>{{item_name}}</p>
-      <p class='font-dosis text-xl '>{{color_name}}</p>
-      <p class='font-dosis text-xl'>Quantity: {{quantity}}</p>
-      <button class='font-dosis text-zinc-600 bg-orange-400 border-2 border-zinc-600'>Save</button>
-    </div>
-  </div>
-</div>

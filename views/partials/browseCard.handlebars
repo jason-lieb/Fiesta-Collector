@@ -4,8 +4,9 @@
   {{else}}
     <img src='/img/items/image_not_available.png' alt='not available' class='img w-[270px] h-[270px]'>
   {{/if}}
-  <div class='text-center grid grid-rows-6 h-[89px] bg-zinc-600 text-white'>
-      <p class='font-dosis text-xl row-start-2 row-end-3'>{{item_name}}</p>
-      <i class='addItem fa-solid fa-plus absolute ml-[245px] mt-[65px] text-xl hover:text-orange-400'></i>
+  <div class='text-center grid grid-rows-6 grid-cols-5 h-[89px] bg-zinc-600 text-white'>
+      <p class='font-dosis text-xl row-span-4 col-span-5'>{{item_name}}</p>
+      {{!-- <i class='addItem fa-solid fa-plus absolute ml-[245px] mt-[65px] text-xl hover:text-orange-400'></i> --}}
+      <i class='addItem fa-solid fa-plus text-xl row-span-2 col-start-3 col-end-5 hover:text-orange-400'></i>
   </div>
 </div>

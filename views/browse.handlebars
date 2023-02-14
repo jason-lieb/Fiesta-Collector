@@ -1,10 +1,10 @@
 {{! Browse items page }}
 
 {{> nav}}
-<div class="grid grid-cols-[1fr_5fr]"> {{! Change this grid columns later }}
+<div class='lg:grid grid-cols-5'> {{! Change this grid columns later }}
   {{> filters}}
-  <main class="scroll">
-    <div id='itemCards' class="flex flex-wrap gap-4 m-2">
+  <main class='scroll m-3 col-span-4'>
+    <div id='itemCards' class='flex flex-wrap gap-4 m-8 ml-14'>
       {{#each items as |item|}}
         {{> browseCard}}
       {{/each}}

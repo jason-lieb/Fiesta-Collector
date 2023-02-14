@@ -595,6 +595,22 @@ video {
   grid-row: span 1 / span 1;
 }
 
+.row-start-2 {
+  grid-row-start: 2;
+}
+
+.row-start-4 {
+  grid-row-start: 4;
+}
+
+.row-end-3 {
+  grid-row-end: 3;
+}
+
+.row-end-5 {
+  grid-row-end: 5;
+}
+
 .m-0 {
   margin: 0px;
 }
@@ -641,28 +657,16 @@ video {
   margin-left: 0.625rem;
 }
 
-.ml-3 {
-  margin-left: 0.75rem;
-}
-
-.ml-\[13px\] {
-  margin-left: 13px;
+.ml-5 {
+  margin-left: 1.25rem;
 }
 
 .ml-\[236px\] {
   margin-left: 236px;
 }
 
-.ml-\[240px\] {
-  margin-left: 240px;
-}
-
 .ml-\[245px\] {
   margin-left: 245px;
-}
-
-.mt-3 {
-  margin-top: 0.75rem;
 }
 
 .mt-4 {
@@ -683,6 +687,22 @@ video {
 
 .mt-\[73px\] {
   margin-top: 73px;
+}
+
+.ml-3 {
+  margin-left: 0.75rem;
+}
+
+.mt-3 {
+  margin-top: 0.75rem;
+}
+
+.ml-\[13px\] {
+  margin-left: 13px;
+}
+
+.ml-\[240px\] {
+  margin-left: 240px;
 }
 
 .block {
@@ -717,6 +737,14 @@ video {
   height: 270px;
 }
 
+.h-\[363px\] {
+  height: 363px;
+}
+
+.h-\[89px\] {
+  height: 89px;
+}
+
 .h-full {
   height: 100%;
 }
@@ -745,6 +773,10 @@ video {
   width: 100%;
 }
 
+.w-\[240px\] {
+  width: 240px;
+}
+
 .appearance-none {
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -757,6 +789,10 @@ video {
 
 .grid-rows-3 {
   grid-template-rows: repeat(3, minmax(0, 1fr));
+}
+
+.grid-rows-6 {
+  grid-template-rows: repeat(6, minmax(0, 1fr));
 }
 
 .flex-col {
@@ -942,11 +978,6 @@ video {
   line-height: 2rem;
 }
 
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
@@ -1037,14 +1068,14 @@ video {
   color: rgb(251 146 60 / var(--tw-text-opacity));
 }
 
-.hover\:text-red-600:hover {
-  --tw-text-opacity: 1;
-  color: rgb(220 38 38 / var(--tw-text-opacity));
-}
-
 .hover\:text-zinc-400:hover {
   --tw-text-opacity: 1;
   color: rgb(161 161 170 / var(--tw-text-opacity));
+}
+
+.hover\:text-red-600:hover {
+  --tw-text-opacity: 1;
+  color: rgb(220 38 38 / var(--tw-text-opacity));
 }
 
 .focus\:border-zinc-600:focus {
@@ -1171,12 +1202,12 @@ video {
     height: 100%;
   }
 
-  .lg\:w-64 {
-    width: 16rem;
+  .lg\:w-48 {
+    width: 12rem;
   }
 
-  .lg\:w-80 {
-    width: 20rem;
+  .lg\:w-64 {
+    width: 16rem;
   }
 
   .lg\:w-\[438px\] {

@@ -27,6 +27,7 @@ buttonEl.addEventListener('click', signUpFormHandler);
 
 // on click toggles password visiblity
 toggle.addEventListener('click', () => {
+  console.log(password);
   const eyeType =
     password.getAttribute('type') === 'password' ? 'text' : 'password';
   password.setAttribute('type', eyeType);

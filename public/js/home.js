@@ -257,13 +257,13 @@ const loadEdit = (e) => {
     'deleteBtn fa-solid fa-xmark absolute text-2xl text-zinc-600 ml-3 mt-3 hover:text-red-600';
   const left = document.createElement('i');
   left.className =
-    'leftBtn fa-solid fa-chevron-left absolute ml-[13px] mt-[65px] text-zinc-600 hover:text-orange-400';
+    'leftBtn fa-solid fa-chevron-left absolute ml-[13px] mt-[65px] text-white hover:text-orange-400';
   const right = document.createElement('i');
   right.className =
-    'rightBtn fa-solid fa-chevron-right absolute ml-[245px] mt-[65px] text-zinc-600 hover:text-orange-400';
+    'rightBtn fa-solid fa-chevron-right absolute ml-[245px] mt-[65px] text-white hover:text-orange-400';
   const savebtn = document.createElement('i');
   savebtn.className =
-    'saveBtn fa-solid fa-floppy-disk absolute ml-[240px] mt-3 text-2xl text-zinc-600 hover:text-orange-400';
+    'saveBtn fa-solid fa-floppy-disk absolute ml-[236px] mt-3 text-2xl text-zinc-600 hover:text-orange-400';
   itemCardText.appendChild(left);
   itemCardText.appendChild(right);
   const card = itemCardText.parentElement;
@@ -272,16 +272,16 @@ const loadEdit = (e) => {
 };
 
 const quantityUp = (e) => {
-  const quantityEl = e.target.parentElement.children[2];
   const card = e.target.parentElement.parentElement;
-  quantityEl.innerText = `Quantity: ${++card.dataset.qty}`;
+  const quantityEl = e.target.parentElement.children[2];
+  quantityEl.textContent = `Quantity: ${++card.dataset.qty}`;
 };
 
 const quantityDown = (e) => {
   const quantityEl = e.target.parentElement.children[2];
   const card = e.target.parentElement.parentElement;
   if (card.dataset.qty > 1) {
-    quantityEl.innerText = `Quantity: ${--card.dataset.qty}`;
+    quantityEl.textContent = `Quantity: ${--card.dataset.qty}`;
   }
 };
 
@@ -300,11 +300,23 @@ const removeCard = async (e) => {
 };
 
 const saveChoice = async (e) => {
-  // e.target is currently <i class="save ...">
-  // create a variable for id with the same way as you did in removeCard
-  // also create variables for item_name, qty, and color the same way as you did id
-  // remove delete, save, left, and right buttons the same way you did for the edit btn
-  // create a new edit button and add it to the dom the same way you did for the edit btn
+  const card = e.target.parentElement;
+  const id = card.dataset.id;
+  const itemName = card.dataset.item_name;
+  const qty = card.dataset.qty;
+  const color = card.dataset.color_name;
+  console.log(card.children);
+  card.removeChild(card.children[0]);
+  card.removeChild(card.children[0]);
+
+  const itemCardText = card.children[1];
+  itemCardText.removeChild(itemCardText.children[3]);
+  itemCardText.removeChild(itemCardText.children[3]);
+
+  const edit = document.createElement('i');
+  edit.className =
+    'edit fa-solid fa-pen-to-square absolute ml-[245px] mt-[65px] hover:text-orange-400';
+  itemCardText.appendChild(edit);
   // try {
   //   const response = await fetch(`/api/inventory/${id}`, {
   //     method: 'PUT',

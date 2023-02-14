@@ -599,6 +599,14 @@ video {
   left: -30;
 }
 
+.col-span-5 {
+  grid-column: span 5 / span 5;
+}
+
+.col-span-4 {
+  grid-column: span 4 / span 4;
+}
+
 .row-span-1 {
   grid-row: span 1 / span 1;
 }
@@ -801,6 +809,14 @@ video {
 
 .grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-cols-6 {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.grid-cols-5 {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
 .grid-rows-3 {
@@ -1223,6 +1239,10 @@ video {
 
   .lg\:mt-\[80px\] {
     margin-top: 80px;
+  }
+
+  .lg\:grid {
+    display: grid;
   }
 
   .lg\:h-96 {

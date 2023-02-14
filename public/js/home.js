@@ -148,7 +148,6 @@ const hide = (filter, filterType, shouldMatchToShow) => {
         });
         // Hide item if filter matches
         if (!filterMatch) itemCard.style.display = 'none';
-        // itemCard.style.display = 'none';
       }
     }
   );
@@ -204,24 +203,6 @@ const unhide = (filter, filterType, shouldMatchToShow) => {
 };
 
 const init = () => {
-  // const categories = [];
-  // if (document.getElementById('categoryFilters')) {
-  //   const categoriesDiv = document.getElementById('categoryFilters').children;
-  //   for (let i = 0; i < categoriesDiv.length; i++) {
-  //     categories.push(categoriesDiv[i].textContent);
-  //   }
-  // }
-  // global.categories = categories;
-
-  // const colors = [];
-  // if (document.getElementById('colorFilters')) {
-  //   const colorsDiv = document.getElementById('colorFilters').children;
-  //   for (let i = 0; i < colorsDiv.length; i++) {
-  //     colors.push(colorsDiv[i].textContent);
-  //   }
-  // }
-  // global.colors = colors;
-
   if (document.getElementById('colorFilters')) {
     document
       .getElementById('colorFilters')
@@ -334,7 +315,7 @@ const saveChoice = async (e) => {
 };
 
 const redirectToItemPage = (e) => {
-  const card = e.target.parentElement.parentElement;
+  const card = e.target.parentElement;
   document.location.replace(`/browse/${card.dataset.id}`);
 };
 

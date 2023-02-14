@@ -1,12 +1,11 @@
-<div id='card' class='container border-2 border-zinc-600 w-64 h-[363px] rounded' data-color="{{color_name}}" data-category="{{category_name}}" data-item="{{item_name}}" data-id="{{item_id}}">
+<div id='card' class='container border-2 border-zinc-600 w-64 h-[363px] relative rounded' data-color="{{color_name}}" data-category="{{category_name}}" data-item="{{item_name}}" data-id="{{item_id}}">
   {{#if item_has_pic}}
     <img src='/img/items/{{item_id}}.webp' alt='dish' class='img w-[270px] h-[270px]'>
   {{else}}
     <img src='/img/items/image_not_available.png' alt='not available' class='img w-[270px] h-[270px]'>
   {{/if}}
-  <div class='text-center grid grid-rows-6 grid-cols-5 h-[89px] bg-zinc-600 text-white'>
+  <div class='text-center flex justify-center items-center h-[89px] bg-zinc-600 text-white'>
       <p class='font-dosis text-xl row-span-4 col-span-5'>{{item_name}}</p>
-      {{!-- <i class='addItem fa-solid fa-plus absolute ml-[245px] mt-[65px] text-xl hover:text-orange-400'></i> --}}
-      <i class='addItem fa-solid fa-plus text-xl row-span-2 col-start-5 hover:text-orange-400'></i>
   </div>
+  <i class='addItem fa-solid fa-plus text-xl text-white absolute bottom-1 right-1 z-10 hover:text-orange-400'></i>
 </div>

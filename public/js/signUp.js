@@ -12,15 +12,20 @@ const signUpFormHandler = async (event) => {
   let passwordInputEl = document.querySelector('#passwordInput').value.trim();
 
   if (nameInputEl && emailInputEl && passwordInputEl) {
-    const login = await fetch('/signup', {
-      method: 'POST',
-      body: JSON.stringify({
-        name: nameInputEl,
-        email: emailInputEl,
-        password: passwordInputEl,
-      }),
-      headers: { 'Content-Type': 'application/json' },
-    });
+    if(!validateEmail(emailInputEl)){
+      return;
+    } else{
+      const login = await fetch('/signup', {
+        method: 'POST',
+        body: JSON.stringify({
+          name: nameInputEl,
+          email: emailInputEl,
+          password: passwordInputEl,
+        }),
+        headers: { 'Content-Type': 'application/json' },
+      });
+    }
+
   }
 };
 
@@ -51,3 +56,14 @@ document.querySelector('#passwordInput').addEventListener('keydown', (e) => {
     signUpFormHandler(e);
   }
 });
+
+function validateEmail(email) 
+{
+ if (email.match(
+  /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/))
+  {
+    return (true)
+  }
+    alert("You have entered an invalid email address!")
+    return (false)
+};

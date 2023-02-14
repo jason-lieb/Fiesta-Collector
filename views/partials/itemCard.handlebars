@@ -5,11 +5,12 @@
   {{else}}
     <img src='/img/items/image_not_available.png' alt='not available' class='img w-[270px] h-[270px]'>
   {{/if}}
-  <div class='text-center grid grid-rows-3 bg-zinc-600 text-white'>
-      <p class='font-dosis text-xl '>{{item_name}}</p>
-      <p class='font-dosis text-xl '>{{color_name}}</p>
-      <p class='font-dosis text-xl'>Quantity: {{quantity}}</p>
-      <i class='edit fa-solid fa-pen-to-square absolute ml-[245px] mt-[65px] hover:text-orange-400'></i>
+<div class=' grid grid-rows-3 grid-cols-8 bg-zinc-600 text-white pl-4'>
+      <p class='font-dosis text-xl col-span-8'>{{item_name}}</p>
+      <p class='font-dosis text-xl col-span-8'>{{color_name}}</p>
+      <p class='font-dosis text-xl col-span-7'>Quantity: {{quantity}}</p>
+      {{!-- <i class='edit fa-solid fa-pen-to-square absolute ml-[230px] mt-[65px] hover:text-orange-400'></i> --}}
+      <i class='edit fa-solid fa-pen-to-square hover:text-orange-400 col-span-1'></i>
   </div>
 </div>
 

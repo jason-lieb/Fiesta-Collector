@@ -1,6 +1,11 @@
 let buttonEl = document.querySelector('#button');
 const toggle = document.querySelector('#toggle');
 const password = document.querySelector('#passwordInput');
+const hidden = document.querySelector('#hidden');
+const hiddentwo = document.querySelector('#hiddentwo');
+const x = document.querySelector('#x');
+const xtwo = document.querySelector('#xtwo');
+
 
 const signUpFormHandler = async (event) => {
   event.preventDefault();
@@ -13,6 +18,9 @@ const signUpFormHandler = async (event) => {
 
   if (nameInputEl && emailInputEl && passwordInputEl) {
     if (!validateEmail(emailInputEl)) {
+      return; 
+    }
+    if (!validatePassword(passwordInputEl)) {
       return;
     } else {
       try {
@@ -36,6 +44,13 @@ const signUpFormHandler = async (event) => {
 };
 
 buttonEl.addEventListener('click', signUpFormHandler);
+
+x.addEventListener('click', () => {
+  hidden.setAttribute('class', 'hidden');
+});
+xtwo.addEventListener('click', () => {
+  hiddentwo.setAttribute('class', 'hidden');
+});
 
 // on click toggles password visiblity
 toggle.addEventListener('click', () => {
@@ -71,6 +86,15 @@ function validateEmail(email) {
   ) {
     return true;
   }
-  alert('You have entered an invalid email address!');
+  hidden.className = 'flex justify-center mb-4';
+  return false;
+}
+
+function validatePassword(password) {
+  if (password < 8 || password > 20) 
+   {
+    return true;
+  }
+  hiddentwo.className = 'flex justify-center mb-4';
   return false;
 }

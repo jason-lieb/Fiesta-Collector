@@ -39,7 +39,13 @@ exports.getOne = async (req, res) => {
   try {
     const itemObject = await Item.findByPk(req.params.id);
     const item = itemObject.get({ plain: true });
-    res.render('item', item);
+    const imagesNotAvailable = [
+      1, 2, 21, 23, 24, 27, 28, 30, 31, 32, 46, 51, 52, 53, 64,
+    ];
+    res.render('item', {
+      item,
+      item_has_pic: !imagesNotAvailable.includes(item.id),
+    });
   } catch (err) {
     res.status(500).json(err);
   }

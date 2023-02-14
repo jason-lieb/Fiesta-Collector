@@ -1,5 +1,6 @@
 let buttonEl = document.querySelector('#button');
 const toggle = document.querySelector('#toggle');
+const password = document.querySelector('#passwordInput');
 
 const signUpFormHandler = async (event) => {
   event.preventDefault();

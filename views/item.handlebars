@@ -2,6 +2,10 @@
 {{! Enter new Item Page }}
 
 <div style="border: 1px black solid;">
-  {{!-- Item.pictureLocation? --}}
-  <p>{{item_name}}</p>
+  {{#if item_has_pic}}
+    <img src='/img/items/{{item.id}}.webp' alt='dish' class='img w-[270px] h-[270px]'>
+  {{else}}
+    <img src='/img/items/image_not_available.png' alt='not available' class='img w-[270px] h-[270px]'>
+  {{/if}}
+  <p>{{item.item_name}}</p>
 </div>

@@ -9,7 +9,6 @@ const global = {
 
 const hidden = document.querySelector('#hidden');
 const x = document.querySelector('#x');
-const itemCardEl = document.querySelector('#itemCards');
 
 const logout = async () => {
   const response = await fetch('/api/user/logout', {
@@ -21,7 +20,6 @@ const logout = async () => {
     document.location.replace('/login');
   } else {
     hidden.classList.remove('hidden');
-    // alert ('Failed to log out');
   }
 };
 
@@ -61,6 +59,7 @@ const selectFilter = (e, filterType) => {
   }
   // Creates DOM element for selected filter and adds to selected filter section
   const newSelected = document.createElement('li');
+  newSelected.style.listStyleType = 'none';
   newSelected.textContent = selectedFilter;
   newSelected.className = 'text-orange-400';
   selectedFiltersDOM.appendChild(newSelected);
@@ -249,19 +248,27 @@ const init = () => {
       .getElementById('selectedItemFilters')
       .addEventListener('click', (e) => deselectFilter(e, 'item'));
   }
+  if (document.querySelector('#itemCards')) {
+    const itemCardEl = document.querySelector('#itemCards');
+    itemCardEl.addEventListener('click', btnRouter);
+  }
 };
 
 const loadEdit = (e) => {
   const itemCardText = e.target.parentElement;
   itemCardText.removeChild(itemCardText.children[3]);
   const deletebtn = document.createElement('i');
-  deletebtn.className = 'deleteBtn fa-solid fa-xmark absolute text-2xl text-zinc-600 ml-3 mt-3 hover:text-red-600';
+  deletebtn.className =
+    'deleteBtn fa-solid fa-xmark absolute text-2xl text-zinc-600 ml-3 mt-3 hover:text-red-600';
   const left = document.createElement('i');
-  left.className = 'leftBtn fa-solid fa-chevron-left absolute ml-[13px] mt-[65px] text-white hover:text-orange-400';
+  left.className =
+    'leftBtn fa-solid fa-chevron-left absolute ml-[13px] mt-[65px] text-white hover:text-orange-400';
   const right = document.createElement('i');
-  right.className = 'rightBtn fa-solid fa-chevron-right absolute ml-[245px] mt-[65px] text-white hover:text-orange-400';
+  right.className =
+    'rightBtn fa-solid fa-chevron-right absolute ml-[245px] mt-[65px] text-white hover:text-orange-400';
   const savebtn = document.createElement('i');
-  savebtn.className = 'saveBtn fa-solid fa-floppy-disk absolute ml-[236px] mt-3 text-2xl text-zinc-600 hover:text-orange-400';
+  savebtn.className =
+    'saveBtn fa-solid fa-floppy-disk absolute ml-[236px] mt-3 text-2xl text-zinc-600 hover:text-orange-400';
   itemCardText.appendChild(left);
   itemCardText.appendChild(right);
   const card = itemCardText.parentElement;
@@ -276,10 +283,13 @@ const quantityUp = (e) => {
 };
 
 const quantityDown = (e) => {
-  const card = e.target.parentElement.parentElement;
   const quantityEl = e.target.parentElement.children[2];
-  quantityEl.textContent = `Quantity: ${--card.dataset.qty}`;
+  const card = e.target.parentElement.parentElement;
+  if (card.dataset.qty > 1) {
+    quantityEl.textContent = `Quantity: ${--card.dataset.qty}`;
+  }
 };
+
 const removeCard = async (e) => {
   const card = e.target.parentElement;
   const id = card.dataset.id;
@@ -293,6 +303,7 @@ const removeCard = async (e) => {
     console.error(err);
   }
 };
+
 const saveChoice = async (e) => {
   const card = e.target.parentElement;
   const id = card.dataset.id;
@@ -303,12 +314,13 @@ const saveChoice = async (e) => {
   card.removeChild(card.children[0]);
   card.removeChild(card.children[0]);
 
-  const itemCardText = card.children[1]
+  const itemCardText = card.children[1];
   itemCardText.removeChild(itemCardText.children[3]);
   itemCardText.removeChild(itemCardText.children[3]);
 
   const edit = document.createElement('i');
-  edit.className = 'edit fa-solid fa-pen-to-square absolute ml-[245px] mt-[65px] hover:text-orange-400';
+  edit.className =
+    'edit fa-solid fa-pen-to-square absolute ml-[245px] mt-[65px] hover:text-orange-400';
   itemCardText.appendChild(edit);
   // try {
   //   const response = await fetch(`/api/inventory/${id}`, {
@@ -327,13 +339,12 @@ const saveChoice = async (e) => {
   // }
 };
 
-init();
-document.querySelector('#logOutButton').addEventListener('click', logout);
-x.addEventListener('click', () => {
-  hidden.setAttribute('class', 'hidden');
-});
-itemCardEl.addEventListener('click', (e) => {
+const redirectToItemPage = (e) => {
+  const card = e.target.parentElement.parentElement;
+  document.location.replace(`/browse/${card.dataset.id}`);
+};
 
+const btnRouter = (e) => {
   switch (e.target.className.split(' ')[0]) {
     case 'edit':
       loadEdit(e);
@@ -350,5 +361,15 @@ itemCardEl.addEventListener('click', (e) => {
     case 'saveBtn':
       saveChoice(e);
       break;
+    case 'addItem':
+      redirectToItemPage(e);
+      break;
   }
+};
+
+init();
+document.querySelector('#logOutButton').addEventListener('click', logout);
+
+x.addEventListener('click', () => {
+  hidden.setAttribute('class', 'hidden');
 });

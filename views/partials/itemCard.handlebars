@@ -1,17 +1,3 @@
-{{!-- Card with picture and item name, color, quantity and delete buttons 
-<div style="border: 1px black solid; width: 10rem; height: 20rem; margin: 1rem;" data-color="{{color_name}}" data-category="{{category_name}}" data-item="{{item_name}}"> 
-  Delete button if on home page 
-  Edit button if on home page 
-  Item.pictureLocation? 
-   {{#if item_has_pic}}
-    <img src="/img/items/{{item_id}}.webp" alt="" class='ml-[13px] mt-[65px]'>
-  {{else}}
-    <img src="/img/items/image_not_available.png" alt=""  class='img ml-[240px] h-[270px] ml-3 mt-3  ">
-  {{/if}}
-  <p>{{item_name}}</p>
-  <p>{{color_name}}</p>
-  <p>{{quantity}}</p>
-</div>  --}}
 
 <div id='card' class='container border-2 border-zinc-600 w-64 rounded' data-qty="{{quantity}}" data-color="{{color_name}}" data-category="{{category_name}}" data-item="{{item_name}}" data-id="{{id}}">
   {{#if item_has_pic}}
@@ -27,16 +13,3 @@
   </div>
 </div>
 
-{{!-- browse card --}}
-{{!-- <div id='card' class='container border-2 border-zinc-600 w-64 h-[363px] rounded' data-color="{{color_name}}" data-category="{{category_name}}" data-item="{{item_name}}" data-id="{{id}}">
-  {{#if item_has_pic}}
-    <img src='/img/items/{{item_id}}.webp' alt='dish' class='img w-[270px] h-[270px]'>
-  {{else}}
-    <img src='/img/items/image_not_available.png' alt='not available' class='img w-[270px] h-[270px]'>
-  {{/if}}
-  <div class='text-center grid grid-rows-6 h-[89px] bg-zinc-600 text-white'>
-      <p class='font-dosis text-xl row-start-2 row-end-3'>{{item_name}}</p>
-      <p class='font-dosis text-xl row-start-4 row-end-5'>{{color_name}}</p>
-      <i class='fa-solid fa-plus absolute ml-[245px] mt-[65px] text-xl hover:text-orange-400'></i>
-  </div>
-</div> --}}

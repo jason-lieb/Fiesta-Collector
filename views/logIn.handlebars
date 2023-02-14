@@ -7,25 +7,26 @@
             <ol>
                 <li class='flex flex-col'>
                     <input id='emailInput' placeholder='example@email.com' class='hover:bg-zinc-300 rounded-lg border-solid border-2 border-zinc-500 text-center w-full my-2 py-1 font-dosis lg:text-lg'/>
-                    <input id='passwordInput' type='password' placeholder='Password' class='hover:bg-zinc-300 rounded-lg border-solid border-2 border-zinc-500 text-center w-full my-2 py-1 font-dosis lg:text-lg'>
-                        <i id='toggle' class="fa-regular fa-eye-slash relative top-[-37] lg:top-[-38] ml-2.5 text-md text-zinc-500"></i>
-                    </input>
+                    <div class="flex items-center mt-4 mb-4 relative">
+                      <i id='toggle' class="fa-regular fa-eye-slash ml-2 text-md text-zinc-500 z-10"></i>
+                      <input id='passwordInput' type='password' placeholder='Password' class='absolute hover:bg-zinc-300 rounded-lg border-solid border-2 border-zinc-500 text-center w-full my-2 py-1 font-dosis lg:text-lg'>
+                    </div>
                 </li>
                 <li class='flex justify-center'>
                     <button id='button' class='bg-orange-400 hover:bg-zinc-300 w-full rounded-lg mt-4 mb-4 py-2 font-dosis'>
-                            Login
+                      Login
                     </button>
                 </li>
-                <div id='hidden' class='flex justify-center hidden'>
+                <div id='hidden' class='hidden'>
                     <div class='h-10 w-[263px] md:w-[351px] lg:w-[438px] rounded-lg text-center text-zinc-600 border-4 border-orange-400 flex items-center'>
                         <h2 class='font-dosis text-xl w-full'>Failed to login</h2>
                         <i id='x' class='absolute fa-solid fa-xmark text-xl ml-[236px] md:ml-[320px] lg:ml-[405px]'></i>
                     </div>
                 </div>
-                <hr class='mt-5 mb-5 border-2  border-zinc-500'>
+                <hr class='mb-5 border-2  border-zinc-500'>
                 <li class='text-center m-3'>
                     <h4 class='text-xl font-dosis'>Don't have an account?</h4>
-                    <a href='./signUp' class='text-orange-400 hover:text-zinc-400 font-dosis text-lg'>Create account</a>
+                    <a href='./signup' class='text-orange-400 hover:text-zinc-400 font-dosis text-lg'>Create account</a>
                 </li>
             </ol>
         </div>

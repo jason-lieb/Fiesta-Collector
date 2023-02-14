@@ -9,15 +9,17 @@
                 {{!-- <li class='flex gap-4 sm:grid-cols-1 md:grid-rows-1'> --}}
                     <input id='nameInput' placeholder='Your name' class='hover:bg-zinc-300 rounded-lg border-solid border-2 border-zinc-500 text-center w-full my-2 py-1 font-dosis lg:text-lg'/>
                     <input id='emailInput' placeholder='example@email.com' class='hover:bg-zinc-300 rounded-lg border-solid border-2 border-zinc-500 text-center w-full my-2 py-1 font-dosis lg:text-lg'/>
-                    <input id='passwordInput' type='password' placeholder='Password' class='hover:bg-zinc-300 rounded-lg border-solid border-2 border-zinc-500 text-center w-full my-2 py-1 font-dosis lg:text-lg'>
-                    <i id='toggle' class="fa-regular fa-eye-slash relative top-[-36] lg:top-[-38] ml-2.5 text-zinc-500" style="width: 1.25rem;"></i>
+                    <div class="flex items-center mt-4 mb-4 relative z-10">
+                      <i id='toggle' class="fa-regular fa-eye-slash ml-2 text-zinc-500 z-10" style="width: 1.25rem;"></i>
+                      <input id='passwordInput' type='password' placeholder='Password' class='absolute hover:bg-zinc-300 rounded-lg border-solid border-2 border-zinc-500 text-center w-full my-2 py-1 font-dosis lg:text-lg'>
+                    </div>
                 </li>
                 <li class='flex justify-center'>
                     <button id='button' class='bg-orange-400 hover:bg-zinc-300 w-full rounded-lg mt-4 mb-4 py-2 font-dosis'>
                       Sign Up
                     </button>
                 </li>
-                <hr class='mt-5 mb-5 border-2 border-zinc-500'>
+                <hr class='mb-5 border-2 border-zinc-500'>
                 <li class='text-center m-3'>
                     <h4 class='text-xl font-dosis'>Already have an account?</h4>
                     <a href='./login' class='text-orange-400 hover:text-zinc-400 font-dosis text-lg'>Login here</a>

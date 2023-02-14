@@ -993,6 +993,11 @@ video {
   line-height: 1.75rem;
 }
 
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
 .font-normal {
   font-weight: 400;
 }
@@ -1216,6 +1221,10 @@ video {
 
   .lg\:w-\[483px\] {
     width: 483px;
+  }
+
+  .lg\:w-80 {
+    width: 20rem;
   }
 
   .lg\:space-y-64 > :not([hidden]) ~ :not([hidden]) {

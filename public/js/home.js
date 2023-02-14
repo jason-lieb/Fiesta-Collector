@@ -18,7 +18,7 @@ const logout = async () => {
   if (response.ok) {
     document.location.replace('/login');
   } else {
-    hidden.className = 'absolute flex justify-center top-0 w-full mt-5';
+    hidden.className = 'absolute flex justify-center top-1 w-full mt-5';
   }
 };
 

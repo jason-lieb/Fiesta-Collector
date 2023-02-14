@@ -305,11 +305,6 @@ const removeCard = async (e) => {
 
 const saveChoice = async (e) => {
   const card = e.target.parentElement;
-  const id = card.dataset.id;
-  const itemName = card.dataset.item_name;
-  const qty = card.dataset.qty;
-  const color = card.dataset.color_name;
-  console.log(card.children);
   card.removeChild(card.children[0]);
   card.removeChild(card.children[0]);
 
@@ -321,21 +316,20 @@ const saveChoice = async (e) => {
   edit.className =
     'edit fa-solid fa-pen-to-square absolute ml-[245px] mt-[65px] hover:text-orange-400';
   itemCardText.appendChild(edit);
-  // try {
-  //   const response = await fetch(`/api/inventory/${id}`, {
-  //     method: 'PUT',
-  //     headers: { 'Content-Type': 'application/json' },
-  //     body: {
-  //       id,
-  //       user_id,
-  //       item_id,
-  //       color_id,
-  //       quantity,
-  //     },
-  //   });
-  // } catch (err) {
-  //   console.error(err);
-  // }
+
+  const id = card.dataset.id;
+  const qty = card.dataset.qty;
+  try {
+    const response = await fetch(`/api/inventory/${id}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        quantity: qty,
+      }),
+    });
+  } catch (err) {
+    console.error(err);
+  }
 };
 
 const redirectToItemPage = (e) => {

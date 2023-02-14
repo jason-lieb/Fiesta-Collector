@@ -19,11 +19,13 @@
     overflow: scroll;
     border: none;
   }
-  main {
-    margin-left: 16rem !important;
+  #main {
+    margin-left: 16rem;
   }
 }
 
-/* #filters {
-
-} */
+@media (max-width: 1024px) {
+  #filters {
+    border-bottom: 2px solid rgb(161 161 170);
+  }
+}

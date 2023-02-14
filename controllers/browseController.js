@@ -5,9 +5,7 @@ exports.get = async (req, res) => {
     // Query all items
     const itemObjects = await Item.findAll({ include: [{ model: Category }] });
     const dataForItems = itemObjects.map((data) => data.get({ plain: true }));
-    const imagesNotAvailable = [
-      // 1, 2, 21, 23, 24, 27, 28, 30, 31, 32, 46, 51, 52, 53, 64,
-    ];
+    const imagesNotAvailable = [];
     const items = dataForItems.map((data) => {
       return {
         item_id: data.id,
@@ -39,9 +37,7 @@ exports.getOne = async (req, res) => {
   try {
     const itemObject = await Item.findByPk(req.params.id);
     const item = itemObject.get({ plain: true });
-    const imagesNotAvailable = [
-      // 1, 2, 21, 23, 24, 27, 28, 30, 31, 32, 46, 51, 52, 53, 64,
-    ];
+    const imagesNotAvailable = [];
     const colorObjects = await Color.findAll();
     const colors = colorObjects.map(
       (data) => data.get({ plain: true }).color_name
@@ -72,21 +68,3 @@ exports.postOne = async (req, res) => {
     res.status(500).json(err);
   }
 };
-
-// Session example
-// res.render('homepage', {
-//   galleries,
-//   loggedIn: req.session.loggedIn,
-// });
-
-// Pseudo Code
-// pass in which page we're on (your collection or browse)
-// get all items
-// get all categories
-// get all colors
-
-// Add later if time allows
-// cookie for how many results per page?
-// page number we're on?
-// get years?
-// get year codes?

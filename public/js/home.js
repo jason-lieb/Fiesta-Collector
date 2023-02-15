@@ -299,7 +299,7 @@ const saveChoice = async (e) => {
 
   const edit = document.createElement('i');
   edit.className =
-    'edit fa-solid fa-pen-to-square text-white absolute right-1 bottom-1 hover:text-orange-400';
+    'edit fa-solid fa-pen-to-square text-white absolute right-2 bottom-2 hover:text-orange-400';
   card.appendChild(edit);
 
   const id = card.dataset.id;

@@ -13,7 +13,7 @@ exports.post = async (req, res) => {
     });
     if (!dbUserData) {
       res
-        .status(400)
+        .status(401)
         .json({ message: 'Incorrect email or password. Please try again!' });
       return;
     }
@@ -22,7 +22,7 @@ exports.post = async (req, res) => {
 
     if (!validPassword) {
       res
-        .status(400)
+        .status(401)
         .json({ message: 'Incorrect email or password. Please try again!' });
       return;
     }

@@ -19,8 +19,6 @@ const signUpFormHandler = async (event) => {
     if (!validateEmail(emailInputEl)) {
       return;
     }
-    console.log(passwordInputEl);
-    console.log(validatePassword(passwordInputEl));
     if (!validatePassword(passwordInputEl)) {
       return;
     } else {

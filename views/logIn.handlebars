@@ -1,36 +1,71 @@
-<main class='h-full w-full ' style="background-image: url('/img/sun.jpg')">
-  <div class='h-full flex items-center flex-col md:justify-center'>
-    <div class='bg-white rounded-md p-8 mt-16 md:mt-0'>
+<main class='h-full w-full' style="background-image: url('/img/sun.jpg')">
+  <div class='flex h-full flex-col items-center md:justify-center'>
+    <div class='mt-16 rounded-md bg-white p-8 md:mt-0'>
       <div class='my-8'>
-        <h1 class='font-serif text-4xl md:text-5xl lg:text-6xl text-center pt-5'>Fiesta Collector</h1>
+        <h1
+          class='pt-5 text-center font-serif text-4xl md:text-5xl lg:text-6xl'
+        >Fiesta Collector</h1>
       </div>
       <form>
         <ol>
           <li class='flex flex-col'>
-            <input id='emailInput' placeholder='example@email.com' maxlength="50" class='hover:bg-zinc-300 rounded-lg border-solid border-2 border-zinc-500 text-center w-full my-2 py-1 font-dosis lg:text-lg'/>
-            <div class="flex items-center mt-4 mb-4 relative">
-              <i id='toggle' class="fa-regular fa-eye-slash ml-2 text-md text-zinc-500 z-10"></i>
-              <input id='passwordInput' type='password' placeholder='Password' minlength='8' maxlength="20" class='absolute hover:bg-zinc-300 rounded-lg border-solid border-2 border-zinc-500 text-center w-full my-2 py-1 font-dosis lg:text-lg'>
+            <input
+              id='emailInput'
+              placeholder='example@email.com'
+              maxlength='50'
+              class='my-2 w-full rounded-lg border-2 border-solid border-zinc-500 py-1 text-center font-dosis hover:bg-zinc-300 lg:text-lg'
+            />
+            <div class='relative mt-4 mb-4 flex items-center'>
+              <i
+                id='toggle'
+                class='fa-regular fa-eye-slash text-md z-10 ml-2 text-zinc-500'
+              ></i>
+              <input
+                id='passwordInput'
+                type='password'
+                placeholder='Password'
+                minlength='8'
+                maxlength='20'
+                class='absolute my-2 w-full rounded-lg border-2 border-solid border-zinc-500 py-1 text-center font-dosis hover:bg-zinc-300 lg:text-lg'
+              />
             </div>
           </li>
           <li class='flex justify-center'>
-            <button id='button' class='bg-orange-400 hover:bg-zinc-300 w-full rounded-lg mt-4 mb-4 py-2 font-dosis'>
+            <button
+              id='button'
+              class='mt-4 mb-4 w-full rounded-lg bg-orange-400 py-2 font-dosis hover:bg-zinc-300'
+            >
               Login
             </button>
           </li>
           <div id='hidden' class='hidden'>
-            <div class='h-10 w-[263px] md:w-[351px] lg:w-[438px] rounded-lg text-center text-zinc-600 border-4 border-orange-400 flex items-center'>
-              <h2 class='font-dosis text-xl w-full'>Failed to login</h2>
-              <i id='x' class='absolute fa-solid fa-xmark text-xl ml-[236px] md:ml-[320px] lg:ml-[405px]'></i>
+            <div
+              class='flex h-10 w-[263px] items-center rounded-lg border-4 border-orange-400 text-center text-zinc-600 md:w-[351px] lg:w-[438px]'
+            >
+              <h2 class='w-full font-dosis text-xl'>Failed to login</h2>
+              <i
+                id='x'
+                class='fa-solid fa-xmark absolute ml-[236px] text-xl md:ml-[320px] lg:ml-[405px]'
+              ></i>
             </div>
           </div>
-          <hr class='mb-5 border-2  border-zinc-500'>
-          <li class='text-center m-3'>
-            <h4 class='text-xl font-dosis'>Don't have an account?</h4>
-            <a href='./signup' class='text-orange-400 hover:text-zinc-400 font-dosis text-lg'>Create account</a>
+          <hr class='mb-5 border-2 border-zinc-500' />
+          <li class='m-3 text-center'>
+            <h4 class='font-dosis text-xl'>Don't have an account?</h4>
+            <a
+              href='./signup'
+              class='font-dosis text-lg text-orange-400 hover:text-zinc-400'
+            >Create account</a>
           </li>
         </ol>
       </form>
+    </div>
+    <div class='mt-8 rounded bg-white p-8'>
+      <h4 class='text-center font-dosis text-xl'>Login with these test
+        credentials</h4>
+      <p class='text-center font-dosis text-zinc-400'>Jason@email.com</p>
+      <p class='text-center font-dosis text-zinc-400'>test1234</p>
+      <h4 class='text-center font-dosis text-xl'>Or create your own account</h4>
     </div>
   </div>
 </main>
